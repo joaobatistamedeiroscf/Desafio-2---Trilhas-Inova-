@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de inscrição</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <header>
+    </header>
+    <main id="principal">
+        <section class="principal-formulario">
+            <div class="voltar">
+                <a href="index.html"> <img src="imagens/seta para esquerda.png"> Voltar</a>
+            </div>
+            <h1 class="principal-formulario-titulo">Formulário de inscrição</h1>
+            <p class="principal-formulario-texto-um">Preencha os dados abaixo para fazer sua inscrição no Programa Trilhas.</p>
+            
+            <form id="form" >
+
+                <div class="formulario-primeiro-bloco">
+                    <h2 class="primeiro-bloco-texto"><strong>Informações do participante</strong></h2>
+
+                    <div>
+                        <label for="nome">Nome completo</label><br>
+                        <input type="text" name="nome" id="nome" placeholder="Digite o seu nome completo" >
+                    </div>
+                    
+ 
+                    <div>
+                        <label for="data">Data de nascimento</label><br>
+                        <input type="date" name="data" id="data" >
+                    </div>
+
+                    <div>
+                        <label for="numero-CPF">CPF</label><br>
+                        <input type="number" name="numero-CPF" id="numero-CPF" placeholder="Digite o seu CPF(somente números)" >
+                    </div>
+
+                    <div>
+                        <label for="sexo">Sexo</label><br>
+                        <select id="sexo" name="sexo">
+                            <option class="option" value="Masculino">Masculino</option>
+                            <option class="option" value="Femenino">Feminino</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="email">E-mail</label><br>
+                        <input type="email" name="email" id="email" placeholder="Digite o seu email" >
+                    </div>
+
+                    <div>
+                        <label for="numero-telefone">Telefone</label><br>
+                        <input type="number" name="numero-telefone" id="numero-telefone" placeholder="Digite o seu telefone(somente números)" >
+                    </div>
+
+                    <div>
+                        <p class="texto-identidade" >Documentação de identidade</p>
+                        <div class="file-identidade">
+                            <img src="./imagens/nuvem2.png" width="48px" height="48px">
+                            <p>Clique aqui para selecionar o arquivo</p>
+                            <input type="file" name="identidade" id="identidade" required>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="formulario-segundo-bloco">
+                    <h2 class="sugundo-bloco-texto">Endereço residencial</h2>
+
+                    <div>
+                        <label for="numero-cep">CEP</label><br>
+                        <input type="number" name="numero-cep" id="numero-cep" placeholder="Digite o seu cep da sua região">
+                    </div>
+
+                    <div class="formulario-segundo-bloco-metade">
+                        <div>
+                            <label for="rua">Rua</label><br>
+                            <input type="text" name="rua" id="rua" placeholder="Digite o nome da sua rua" >/
+                        </div>
+
+                        <div>
+                            <label for="numero-casa">Número</label><br>
+                            <input type="number" name="numero-casa" id="numero-casa" placeholder="Digite o número da sua casa" >
+                        </div>
+
+                        <div>
+                            <label for="cidade">Cidade</label><br>
+                            <input type="text" name="cidade" id="cidade" placeholder="Digite o nome da sua Cidade ">
+                        </div>
+
+                        <div>
+                              <label for="estado">Estado</label><br>
+                            <input type="text" name="estado" id="estado" placeholder="MA">
+                        </div>
+                    </div>
+
+                    <div>
+                        <h2 class="texto-residencia">Comprovante de residência</h2>
+                        <div class="file-residencia">
+                            <img src="imagens/nuvem2.png" width="48px" height="48px">
+                            <p>Clique aqui para selecionar o arquivo</p>
+                            <input type="file" name="residencia" id="residencia" required>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="trilha-apredizagem-subtilulo">Trilhas de aprendizagem</h2>
+
+                <p class="trilha-apredizagem-texto">Selecione apenas uma trilha</p>
+
+                <div class="formulario-terceiro-bloco">
+
+                    <div class="trilha-front-end">
+                        <input type="radio" id="front-end" name="trilha" checked="checked">
+                        <img src="imagens/front-end.png"><br>
+                        <label for="front-end">Programação Front-end</label>
+                    </div>
+
+                    <div class="trilha-back-end">
+                        <input type="radio" id="back-end" name="trilha">
+                        <img src="imagens/back-end.png"><br>
+                        <label for="back-end">Programação Back-end</label>
+                    </div>
+
+                    <div class="trilha-jogos">
+                        <input type="radio" id="jogos" name="trilha">
+                        <img src="imagens/jogos.png"><br>
+                        <label for="jogos">Programação de Jogos</label>
+                    </div>
+
+                    <div class="trilha-design">
+                        <input type="radio" id="design" name="trilha">
+                        <img src="imagens/ux.png"><br>
+                        <label for="design">Design e Experiência</label>
+                    </div>
+
+                    <div class="trilha-dados">
+                        <input type="radio" id="dados" name="trilha">
+                        <img src="imagens/ciencia de dados.png"><br>
+                        <label for="dados">Ciência de Dados</label>
+                    </div>
+
+                </div>
+
+                <br>
+
+                <div class="termo-politica">
+                    <input class="termo" type="checkbox" name="termo" id="termo" required>
+                    <label for="termo">Declaro que li e concordo com os <strong>Termos e Condições</strong> e com a <strong>Política de Privacidade.</strong> </label>
+                </div>
+
+                <div class="botao-final">
+                    <input class="cancelar" type="reset" value="Cancelar">
+                    <input class="fazer-inscricao" type="submit" value="Fazer inscrição">
+                </div>
+                
+
+            </form>
+        </section>
+
+        <section>
+            <div class="imagens-lateral">
+                <img class="imagens-lateral-um" src="imagens/Ilustration.png">
+                <img class="imagens-lateral-dois" src="imagens/logo-trilhas-inova.png">
+            </div>
+        </section>
+
+    </main>
+
+    <footer > </footer>
+
+    <script src="js/script.js"> 
+
+    </script>
+    
+</body>
+</html>

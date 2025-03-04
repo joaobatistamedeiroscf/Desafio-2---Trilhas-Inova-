@@ -1,0 +1,440 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Poppins:wght@400;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --cor-primaria: #57534E;
+    --cor-secundaria: #292524;
+    --cor-terciaria: #2135A6;
+    --cor-quaternaria: #D6D3D1;
+    --cor-quinta: #000000;
+    --cor-sexta: #E43A12;
+    --cor-setima:#F67841 ; 
+    --cor-inscrevercancelar: #FFFFFF ; 
+
+    --fonte-primaria: "Poppins", sans-serif;
+    --fonte-secundaria: "Montserrat", sans-serif;
+}
+
+body{
+    box-sizing: border-box;
+    color: var(--cor-primaria);
+}
+
+.voltar{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1.5rem;
+}
+
+.voltar a{
+    color: var(--cor-primaria);
+    text-decoration: none;
+    font-family: var(--fonte-primaria);
+    font-weight: 400;
+    font-size: 1rem;
+    display: flex;
+    gap: 8px;
+}
+
+#principal{
+    display: flex;
+    justify-content: space-between;
+    gap: 64px;
+}
+
+.principal-formulario{
+    display: flex;
+    flex-direction: column;
+    margin: 64px 0 0 64px;
+}
+
+.principal-formulario-titulo{
+    font-family: var(--fonte-primaria);
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: var(--cor-secundaria);
+}
+
+.principal-formulario-texto-um{
+    font-family: var(--fonte-primaria);
+    font-weight: 400;
+    font-size: 1rem;
+    margin-top: 8px;
+}
+
+.formulario-primeiro-bloco{
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.primeiro-bloco-texto{
+    font-family: var(--fonte-primaria);
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--cor-secundaria);
+}
+
+label {
+    font-family: var(--fonte-primaria);
+    font-weight: 400;
+    font-size: 14px;   
+}
+
+.formulario-primeiro-bloco input{
+    border: 1px solid var(--cor-quaternaria);
+    border-radius: 8px;
+    color: var(--cor-quinta);
+    padding: 12px;
+    width: 528px;
+}
+.formulario-primeiro-bloco input:focus {
+    border: 2px solid var(--cor-setima) !important;
+    outline: none;
+}
+
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+.formulario-primeiro-bloco select{
+    border: 1px solid var(--cor-quaternaria);
+    border-radius: 8px;
+    color: var(--cor-quinta);
+    padding: 12px;
+    width: 554px;
+    background-image: url("../imagens/seta-baixo.png");
+    background-repeat: no-repeat;
+    background-position: center right;
+}
+
+.option{
+    color: var(--cor-secundaria);
+}
+
+.texto-identidade{
+    font-family: var(--fonte-primaria);
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--cor-primaria);
+}
+
+.file-identidade{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px dashed var(--cor-quaternaria);
+    border-radius: 8px;
+    width: 550px;
+    height: 160px;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    font-family: var(--fonte-primaria);
+    font-size: 16px;
+    color: #A8A29E;
+}
+
+.file-identidade input{
+    opacity: 0;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.formulario-segundo-bloco{
+    padding-top: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.sugundo-bloco-texto{
+    font-family: var(--fonte-primaria);
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--cor-secundaria);
+}
+
+.formulario-segundo-bloco input{
+    border: 1px solid var(--cor-quaternaria);
+    border-radius: 8px;
+    color: var(--cor-quinta);
+    padding: 12px;
+    width: 528px;
+} 
+.formulario-segundo-bloco input:focus {
+    border: 1px solid var(--cor-setima);
+    outline: none;
+}
+
+#rua, #cidade{
+    width: 300px;
+}
+
+#numero-casa, #estado{
+    width: 176px;
+}
+
+.formulario-segundo-bloco-metade{
+    box-sizing: border-box;
+    width: 560px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.texto-residencia{
+    font-family: var(--fonte-primaria);
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--cor-primaria);
+}
+
+.file-residencia{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px dashed var(--cor-quaternaria);
+    border-radius: 8px;
+    width: 550px;
+    height: 160px;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    font-family: var(--fonte-primaria);
+    font-size: 16px;
+    color: #A8A29E;
+}
+
+.file-residencia input{
+    opacity: 0;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.trilha-apredizagem-subtilulo{
+    font-family: var(--fonte-primaria);
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--cor-secundaria);
+    padding-top: 48px;
+    padding-bottom: 24px;
+}
+
+.trilha-apredizagem-texto{
+    font-family: var(--fonte-primaria);
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--cor-primaria);
+    padding-bottom: 16px;
+}
+
+.formulario-terceiro-bloco > *{
+    border: 1px solid var(--cor-quaternaria);
+    border-radius: 8px;
+    width: 267px;
+    height: 120px;
+}
+
+.formulario-terceiro-bloco{
+    box-sizing: border-box;
+    width: 560px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px; 
+    position: relative;
+
+}
+.formulario-terceiro-bloco div:has(input:checked) {
+    border: 2px solid var(--cor-sexta);
+    border-radius: 8px;
+} 
+
+ /* .formulario-terceiro-bloco div {
+    position: relative;
+    overflow: hidden; 
+ } */
+/* .formulario-terceiro-bloco div:has(input:checked)::before {
+    content: "";
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    width: 28px; 
+    height: 28px;
+    background-color: var(--cor-sexta); 
+    border-radius: 50%; 
+    background-image: url("../imagens/check.png");
+    background-size: 16px 16px; 
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 2px solid white; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+    z-index: 2;
+}
+ */ 
+
+.trilha-front-end{
+    text-align: center;
+    font-family: var(--fonte-secundaria);
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--cor-secundaria);
+    
+}
+
+.trilha-front-end input{
+    display: flex;
+    margin-left: 8px;
+    margin-top: 8px;
+    margin-bottom: 10px;
+}
+
+.trilha-back-end{
+    text-align: center;
+    font-family: var(--fonte-secundaria);
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--cor-secundaria);
+}
+
+
+.trilha-back-end input{
+    display: flex;
+    margin-left: 8px;
+    margin-top: 8px;
+    margin-bottom: 10px;
+}
+
+.trilha-jogos{
+    text-align: center;
+    font-family: var(--fonte-secundaria);
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--cor-secundaria);
+}
+
+.trilha-jogos input{
+    display: flex;
+    margin-left: 8px;
+    margin-top: 8px;
+    margin-bottom: 10px;
+}
+
+.trilha-design{
+    text-align: center;
+    font-family: var(--fonte-secundaria);
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--cor-secundaria);
+}
+
+.trilha-design input{
+    display: flex;
+    margin-left: 8px;
+    margin-top: 8px;
+    margin-bottom: 10px;
+}
+
+.trilha-dados{
+    text-align: center;
+    font-family: var(--fonte-secundaria);
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--cor-secundaria);
+}
+
+.trilha-dados input{
+    display: flex;
+    margin-left: 8px;
+    margin-top: 8px;
+    margin-bottom: 10px;
+}
+
+.termo-politica{
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    font-family: var(--fonte-primaria);
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--cor-quinta);
+    padding: 48px 0;
+    width: 528px;
+    align-items: baseline;
+}
+
+.termo-politica strong{
+    font-family: var(--fonte-primaria);
+    font-weight: 500;
+    color: var(--cor-sexta);
+}
+
+.imagens-lateral{
+    background-color: var(--cor-terciaria);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imagens-lateral-um{
+    padding-top: 140px;
+    padding-bottom: 71px;
+    padding-left: 56px;
+    padding-right: 68px;
+    width: 500px;
+    height: 500px;
+}
+
+.imagens-lateral-dois{
+    padding-bottom: 95px;
+    width: 212.25px;
+    height: 26.49px;
+}
+
+.botao-final{
+    display: flex;
+    justify-content: flex-end;
+    width: 545px;
+    gap: 16px;
+    margin-bottom: 64px;
+
+}
+
+.fazer-inscricao{
+    background-color: var(--cor-sexta);
+    padding: 12px 24px;
+    font-family: var(--fonte-primaria);
+    font-weight: 500;
+    font-size: 16px;
+    border-radius: 8px;
+    color: var(--cor-inscrevercancelar);
+    border: 1px solid var(--cor-sexta);
+}
+
+.cancelar{
+    padding: 12px 24px;
+    font-family: var(--fonte-primaria);
+    font-weight: 500;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid var(--cor-sexta);
+    background-color: var(--cor-inscrevercancelar);
+    color: var(--cor-sexta);
+} 
