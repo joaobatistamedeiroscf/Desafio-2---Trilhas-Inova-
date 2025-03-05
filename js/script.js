@@ -9,6 +9,9 @@ let rua = document.getElementById("rua");
 let numeroCasa = document.getElementById("numero-casa");
 let cidade = document.getElementById("cidade");
 let  estado = document.getElementById("estado");
+let comprovanteDeIdentidade = document.getElementById("identidade");
+let comprovanteDeResidencia = document.getElementById("residencia");
+
 
 
 form.addEventListener("submit", (event) => {
@@ -67,7 +70,21 @@ form.addEventListener("submit", (event) => {
         return;
     }
 
-    alert("Formulário de inscrição enviado!!!");
+    if(comprovanteDeIdentidade.value === ""){
+        alert("Por favor , anexe o documento de identidade");
+        return
+    }
+
+    if(comprovanteDeResidencia.value === ""){
+        alert("Por favor , anexe o comprovante de Residência ");
+        return ;
+    }
+
+   
+
+
+
+    alert("Formulário de inscrição enviado com sucessso!!!");
     
     form.submit();
    
