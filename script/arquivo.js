@@ -14,6 +14,15 @@ let comprovanteDeIdentidade = document.getElementById("identidade");
 let comprovanteDeResidencia = document.getElementById("residencia");
 let senhalogin =  document.getElementById("senhalogin");
 
+document.querySelector('.mostrar-senha').addEventListener('click', function() {
+    const senhaInput = document.getElementById('senha');
+    const tipoAtual = senhaInput.getAttribute('type');
+    
+    senhaInput.setAttribute('type', tipoAtual === 'password' ? 'text' : 'password');
+    
+    this.textContent = tipoAtual === 'password' ? '👀' : '🙈';
+});
+
 form.addEventListener("submit", (event) => {
     event.preventDefault();
 
