@@ -1,8 +1,8 @@
 
-let form = document.getElementById("form");
-let nome = document.getElementById("nome");
-let data = document.getElementById("data");
-let cpf = document.getElementById("cpf");
+let form  =  document.getElementById("form");
+let nome  =  document.getElementById("nome");
+let data =  document.getElementById("data");
+let cpf =  document.getElementById("cpf");
 let email = document.getElementById("email");
 let telefone = document.getElementById("phone");
 let cep = document.getElementById("cep");
@@ -12,7 +12,7 @@ let cidade = document.getElementById("cidade");
 let estado = document.getElementById("estado");
 let comprovanteDeIdentidade = document.getElementById("identidade");
 let comprovanteDeResidencia = document.getElementById("residencia");
-
+let senhalogin =  document.getElementById("senhalogin");
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -29,6 +29,11 @@ form.addEventListener("submit", (event) => {
 
     if (cpf.value ==="" || !validaDigitosCpf(cpf.value, 14)) {
         alert("Por favor , preencha corretamente ,o CPF deve conter 11 dígitos.");
+        return;
+    }
+
+    if(sexo === ""){
+        alert("Por favor , preencha com o seu sexo");
         return;
     }
 
@@ -79,6 +84,11 @@ form.addEventListener("submit", (event) => {
         alert("Por favor , anexe o comprovante de Residência ");
         return ;
     }
+   
+    if(senhalogin.value === ""){
+        alert("Por favor , preencha com sua senha");
+        return ; 
+    }
 
 
     alert("Formulário de inscrição enviado!!!");
@@ -102,7 +112,6 @@ function validaDigitoTelefone(telefone, digitostelefonecomdd) {
 
 function validaCep(cep,digitoscep) {
     return cep.length === digitoscep  ;
-    
 }
 
 function buscarCep(cep){
@@ -119,3 +128,4 @@ function buscarCep(cep){
         estado.value = data.uf
     })
 }
+
