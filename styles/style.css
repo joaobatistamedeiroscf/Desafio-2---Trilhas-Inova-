@@ -88,7 +88,8 @@ label {
     font-size: 14px;   
 }
 
-.formulario-primeiro-bloco input, .formulario-segundo-bloco input, select{
+.formulario-primeiro-bloco input, 
+.formulario-segundo-bloco input, select{
     border: 1px solid var(--cor-quaternaria);
     border-radius: 8px;
     padding: 12px;
@@ -99,9 +100,12 @@ label {
     color: var(--cor-secundaria);
 }
 
-.formulario-primeiro-bloco input:focus {
+.formulario-primeiro-bloco input:focus, 
+.formulario-segundo-bloco input:focus {
     border: 2px solid var(--cor-setima) !important;
     outline: none;
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--cor-setima) 20%, transparent 80%);
+    transition: all 0.3s ease;
 }
 
 .formulario-primeiro-bloco select{
@@ -166,11 +170,6 @@ label {
     font-weight: 600;
     font-size: 16px;
     color: var(--cor-secundaria);
-}
-
-.formulario-segundo-bloco input:focus{
-    border: 1px solid var(--cor-setima);
-    outline: none;
 }
 
 #rua, #cidade{
@@ -415,6 +414,86 @@ label {
     background-color: var(--cor-decima);
     color: var(--cor-sexta);
     cursor: pointer;
+}
+
+#pagina-login{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--cor-terciaria);
+    width: 100%;
+
+}
+
+.pagina-login-form{
+    display: flex;
+    flex-direction: column;
+    margin: 13rem auto;
+    font-family: var(--fonte-primaria);
+    font-weight: 500;
+    font-size: 1rem;
+    text-align: center;
+    color: var(--cor-quinta);
+}
+
+.pagina-login-form-text, .pagina-login-form-senha {
+    margin: 0.50rem auto;
+    width: 22rem;
+    padding: 0.75rem;
+    border-radius: 8px;
+    border: var(--cor-terciaria);
+    color: var(--cor-quinta);
+    font-family: var(--fonte-primaria);
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+#pagina-login input[type="text"]:focus, 
+#pagina-login input[type="password"]:focus {
+    border: 2px solid var(--cor-setima) !important;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(246, 120, 65, 0.3);
+}
+
+.senha-container {
+    position: relative;
+    width: 379px;
+    margin: 0 auto;
+}
+  
+.mostrar-senha {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    user-select: none;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+  
+.mostrar-senha:hover {
+    opacity: 1;
+}
+
+.pagina-login-form-submit {
+    width: 13rem;
+    background-color: var(--cor-sexta);
+    padding: 0.75rem;
+    font-family: var(--fonte-primaria);
+    font-weight: 500;
+    font-size: 1rem;
+    border-radius: 8px;
+    color: var(--cor-decima);
+    border: var(--cor-sexta);
+    cursor: pointer;
+    margin: 0.50rem auto;
+}
+
+.pagina-login-rodape {
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
 }
 
 .campo-login {
