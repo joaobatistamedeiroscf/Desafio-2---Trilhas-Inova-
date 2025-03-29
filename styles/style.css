@@ -258,7 +258,11 @@ label {
     border-radius: 8px;
 }
 
-.trilha-front-end, .trilha-back-end, .trilha-jogos, .trilha-design, .trilha-dados{
+.trilha-front-end, 
+.trilha-back-end, 
+.trilha-jogos, 
+.trilha-design, 
+.trilha-dados{
     text-align: center;
     font-family: var(--fonte-secundaria);
     font-weight: 500;
@@ -436,7 +440,8 @@ label {
     color: var(--cor-quinta);
 }
 
-.pagina-login-form-text, .pagina-login-form-senha {
+.pagina-login-form-text, 
+.pagina-login-form-senha {
     margin: 0.50rem auto;
     width: 22rem;
     padding: 0.75rem;
