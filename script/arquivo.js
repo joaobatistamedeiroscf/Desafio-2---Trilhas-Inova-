@@ -21,34 +21,22 @@ form.addEventListener("submit", (event) => {
         return;
     }
 
-<<<<<<< HEAD
     if(data.value ===""){
         alert("Por favor, informe sua data de nascimento");
         return;
     }
 
     if (cpf.value ==="" || !validaDigitosCpf(cpf.value, 14)) {
-=======
-    if (data.value === "") {
-        alert("Por favor, preencha com sua data de nascimento");
-        return;
-    }
-
-    if (cpf.value === "" || !validaDigitosCpf(cpf.value, 14)) {
->>>>>>> 3ff42c9497b900402974f6bcecbc389a89feb648
         alert("Por favor, preencha corretamente, o CPF deve conter 11 dígitos.");
         return;
     }
 
-<<<<<<< HEAD
     if(sexo === ""){
         alert("Por favor, escolha o sexo");
         return;
     }
 
 
-=======
->>>>>>> 3ff42c9497b900402974f6bcecbc389a89feb648
     if (email.value === "" || !validaEmail(email.value)) {
         alert("Por favor, preencha com um e-mail válido.");
         return;
@@ -74,7 +62,6 @@ form.addEventListener("submit", (event) => {
         return;
     }
 
-<<<<<<< HEAD
     if(cidade.value === ""){
         alert("Por favor, preencha com o nome da sua cidade");
         return ; 
@@ -99,16 +86,6 @@ form.addEventListener("submit", (event) => {
     if(senhalogin.value === ""){
         alert("Por favor, preencha com sua senha");
         return ; 
-=======
-    if (cidade.value === "") {
-        alert("Por favor, preencha com o nome da sua cidade");
-        return;
-    }
-
-    if (estado.value === "") {
-        alert("Por favor, preencha com o nome do seu estado (MA)");
-        return;
->>>>>>> 3ff42c9497b900402974f6bcecbc389a89feb648
     }
 
     if (comprovanteDeIdentidade.value === "") {
