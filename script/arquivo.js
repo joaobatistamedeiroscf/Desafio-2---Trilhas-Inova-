@@ -32,17 +32,17 @@ form.addEventListener("submit", (event) => {
     }
 
     if(data.value ===""){
-        alert("Por favor , preencha com sua data de nascimento");
+        alert("Por favor, informe sua data de nascimento");
         return;
     }
 
     if (cpf.value ==="" || !validaDigitosCpf(cpf.value, 14)) {
-        alert("Por favor , preencha corretamente ,o CPF deve conter 11 dígitos.");
+        alert("Por favor, preencha corretamente, o CPF deve conter 11 dígitos.");
         return;
     }
 
     if(sexo === ""){
-        alert("Por favor , preencha com o seu sexo");
+        alert("Por favor, escolha o sexo");
         return;
     }
 
@@ -74,28 +74,28 @@ form.addEventListener("submit", (event) => {
     }
 
     if(cidade.value === ""){
-        alert("Por favor , preencha com o nome da sua cidade");
+        alert("Por favor, preencha com o nome da sua cidade");
         return ; 
 
     }
 
     if(estado.value === ""){
-        alert("Por favor , preencha com o nome do seu estado (MA)");
+        alert("Por favor, preencha com o nome do seu estado (MA)");
         return;
     }
     
     if(comprovanteDeIdentidade.value === ""){
-        alert("Por favor , anexe o documento de identidade");
+        alert("Por favor, anexe o documento de identidade");
         return;
     }
 
     if(comprovanteDeResidencia.value === ""){
-        alert("Por favor , anexe o comprovante de Residência ");
+        alert("Por favor, anexe o comprovante de Residência ");
         return ;
     }
    
     if(senhalogin.value === ""){
-        alert("Por favor , preencha com sua senha");
+        alert("Por favor, preencha com sua senha");
         return ; 
     }
 
