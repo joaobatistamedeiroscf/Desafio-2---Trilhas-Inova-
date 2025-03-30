@@ -17,7 +17,7 @@
             <h2 class="principal-formulario-titulo">Formulário de inscrição</h2>
             <p class="principal-formulario-texto-um">Preencha os dados abaixo para fazer sua inscrição no Programa Trilhas.</p>
             
-            <form id="form" action="/action_page.php" method="post">
+            <form id="form">
 
                 <div class="formulario-primeiro-bloco">
                     <p class="primeiro-bloco-texto"><strong>Informações do participante</strong></p>
@@ -60,7 +60,7 @@
                     <div>
                         <p class="texto-identidade" >Documentação de identidade</p>
                         <div class="file-identidade">
-                            <img src="imagensparafornulario/nuvem dowload.png" width="48px" height="48px">
+                            <img src="imagensparafornulario/nuvem.png" width="48px" height="48px">
                             <p>Clique aqui para selecionar o arquivo</p>
                             <input type="file" name="identidade" id="identidade" >
                         </div>
@@ -84,7 +84,7 @@
 
                         <div>
                             <label for="numero-casa">Número</label><br>
-                            <input type="number" name="numero-casa" id="numero-casa">
+                            <input type="text" name="numero-casa" id="numero-casa">
                         </div>
 
                         <div>
@@ -101,7 +101,7 @@
                     <div>
                         <p class="texto-residencia">Comprovante de residência</p>
                         <div class="file-residencia">
-                            <img src="imagensparafornulario/nuvem dowload.png" width="48px" height="48px">
+                            <img src="imagensparafornulario/nuvem.png" width="48px" height="48px">
                             <p>Clique aqui para selecionar o arquivo</p>
                             <input type="file" name="residencia" id="residencia" >
                         </div>
@@ -144,8 +144,7 @@
                         <label for="dados">Ciência de Dados</label>
                     </div> 
 
-                </div>
-                
+                </div>                
 
                 <br>
 
@@ -157,17 +156,14 @@
                 </div>
                     
                 <div class="campo-login">
-                        <label for="senha">Senha</label>
-                        <input type="password" name="senha" id="senhalogin">
+                    <label for="senha">Senha</label>
+                    <input type="password" name="senha" id="senhalogin">
                 </div>
 
                 <div class="botao-final">
                     <input class="cancelar" type="reset" value="Cancelar">
                     <input class="fazer-inscricao" type="submit" value="Fazer inscrição">
-                </div>
-
-
-                
+                </div>                
 
             </form>
         </section>
@@ -188,6 +184,7 @@
             $('#cpf').mask('000.000.000-00');
             $('#phone').mask('(00) 00000-0000');
             $('#cep').mask('00000-000');
+            $('#numero-casa').mask('0000000');
         });
     </script>
 

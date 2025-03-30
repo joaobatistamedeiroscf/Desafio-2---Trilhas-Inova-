@@ -94,7 +94,7 @@ form.addEventListener("submit", (event) => {
     }
 
     if (comprovanteDeResidencia.value === "") {
-        alert("Por favor, anexe o comprovante de Residência ");
+        alert("Por favor, anexe o comprovante de Residência");
         return;
     }
 
