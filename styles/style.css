@@ -101,7 +101,9 @@ label {
 }
 
 .formulario-primeiro-bloco input:focus, 
-.formulario-segundo-bloco input:focus, select:focus {
+.formulario-segundo-bloco input:focus, 
+.checkbox:hover, select:focus,
+.campo-login input:focus {
     border: 2px solid var(--cor-setima) !important;
     outline: none;
     box-shadow: 0 0 0 3px color-mix(in srgb, var(--cor-setima) 20%, transparent 80%);
@@ -226,7 +228,8 @@ label {
     cursor: pointer;
 }
 
-.trilha-apredizagem-subtilulo{
+.trilha-apredizagem-subtilulo,
+.campo-login-senha {
     font-family: var(--fonte-primaria);
     font-weight: 600;
     font-size: 16px;
@@ -396,16 +399,11 @@ label {
 }
 
 .campo-login input {
-    width: 100% !important;
+    width: 520px !important;
     margin-bottom: 16px; 
     padding: 12px;
     border: 1px solid var(--cor-quaternaria);
     border-radius: 8px;
-}
-
-.campo-login input:focus {
-    border:2px solid var(--cor-setima) !important ;
-    outline: none !important;
 }
 
 .botao-final{
@@ -429,7 +427,7 @@ label {
     cursor: pointer;
 }
 
-.cancelar{
+.cancelar, .salvar-dados{
     padding: 12px 24px;
     font-family: var(--fonte-primaria);
     font-weight: 500;

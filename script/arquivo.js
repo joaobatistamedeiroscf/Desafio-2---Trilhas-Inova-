@@ -13,6 +13,17 @@ let comprovanteDeIdentidade = document.getElementById("identidade");
 let comprovanteDeResidencia = document.getElementById("residencia");
 let senhalogin = document.getElementById("senhalogin");
 
+document.getElementById('senhalogin').addEventListener('input', function() {
+    const senha = this.value;
+    
+    document.getElementById('req-tamanho').style.color = senha.length >= 8 ? 'green' : 'red';
+    document.getElementById('req-maiuscula').style.color = /[A-Z]/.test(senha) ? 'green' : 'red';
+    document.getElementById('req-minuscula').style.color = /[a-z]/.test(senha) ? 'green' : 'red';
+    document.getElementById('req-numero').style.color = /[0-9]/.test(senha) ? 'green' : 'red';
+    document.getElementById('req-especial').style.color = /[!@#$%^&*]/.test(senha) ? 'green' : 'red';
+});
+
+
 form.addEventListener("submit", (event) => {
     event.preventDefault();
 
@@ -48,7 +59,7 @@ form.addEventListener("submit", (event) => {
     }
 
     if (cep.value === "" || !validaCep(cep.value, 9)) {
-        alert("O cep deve conter 8 dígitos");
+        alert("O Cep deve conter 8 dígitos");
         return;
     }
 
@@ -59,17 +70,6 @@ form.addEventListener("submit", (event) => {
 
     if (numeroCasa.value === "") {
         alert("Por favor, preencha com o número da sua casa");
-        return;
-    }
-
-    if(cidade.value === ""){
-        alert("Por favor, preencha com o nome da sua cidade");
-        return ; 
-
-    }
-
-    if(estado.value === ""){
-        alert("Por favor, preencha com o nome do seu estado (MA)");
         return;
     }
     
@@ -107,8 +107,16 @@ form.addEventListener("submit", (event) => {
         return; 
     }
 
-    alert("Formulário de inscrição enviado!!!");
-    form.submit();
+    
+    //form.submit();
+
+    document.getElementById("form").addEventListener("submit", function() {
+        setTimeout(function() {
+            alert("Formulário de inscrição enviado!");
+            window.location.href = "login.html";
+        }, 100);
+    });
+
 });
 
 function validaEmail(email) {
@@ -172,3 +180,4 @@ function senhaForte(senhafo) {
     }
     return true;
 }
+

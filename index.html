@@ -17,7 +17,7 @@
             <h2 class="principal-formulario-titulo">Formulário de inscrição</h2>
             <p class="principal-formulario-texto-um">Preencha os dados abaixo para fazer sua inscrição no Programa Trilhas.</p>
             
-            <form id="form">
+            <form id="form" action="" method="post">
 
                 <div class="formulario-primeiro-bloco">
                     <p class="primeiro-bloco-texto"><strong>Informações do participante</strong></p>
@@ -144,9 +144,36 @@
                         <label for="dados">Ciência de Dados</label>
                     </div> 
 
-                </div>                
+                </div>
 
                 <br>
+
+
+
+
+
+
+                <div class="campo-login">
+                    <p class="campo-login-senha">Crie um senha</p>
+                    <label for="senha">Senha</label><br>
+                    <input type="password" name="senha" id="senhalogin" required 
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                    <div class="requisitos-senha">
+                        <p>Sua senha deve conter:</p>
+                        <ul>
+                            <li id="req-tamanho">Mínimo 8 caracteres</li>
+                            <li id="req-maiuscula">Pelo menos 1 letra maiúscula</li>
+                            <li id="req-minuscula">Pelo menos 1 letra minúscula</li>
+                            <li id="req-numero">Pelo menos 1 número</li>
+                            <li id="req-especial">Pelo menos 1 caractere especial (!@#$%^&*)</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+
+
 
                 <div class="termo-politica">
                     <input class="checkbox" type="checkbox" name="termo" id="termo" required>
@@ -154,16 +181,26 @@
                         Declaro que li e concordo com os <a href=""><strong>Termos e Condições</strong></a> e com a <a href=""><strong>Política de Privacidade.</strong></a>
                     </label>
                 </div>
-                    
-                <div class="campo-login">
-                    <label for="senha">Senha</label>
-                    <input type="password" name="senha" id="senhalogin">
-                </div>
+
+
+
+
+
+
+
 
                 <div class="botao-final">
-                    <input class="cancelar" type="reset" value="Cancelar">
-                    <input class="fazer-inscricao" type="submit" value="Fazer inscrição">
-                </div>                
+                    <button class="salvar-dados">Salvar</button>
+                    <button class="cancelar" type="reset">Cancelar</button>
+                    <button class="fazer-inscricao" type="submit" onclick="">Fazer inscrição</button>
+                </div>
+                
+                
+
+
+
+
+
 
             </form>
         </section>
