@@ -40,7 +40,7 @@
 
                     <div>
                         <label for="sexo">Sexo</label><br>
-                        <select id="sexo" name="sexo" required >
+                        <select id="sexo" name="sexo">
                             <option selected disabled value="">Selecione</option>
                             <option class="option" value="Masculino">Masculino</option>
                             <option class="option" value="Femenino">Feminino</option>
@@ -148,19 +148,14 @@
 
                 <br>
 
-
-
-
-
-
                 <div class="campo-login">
                     <p class="campo-login-senha">Crie um senha</p>
                     <label for="senha">Senha</label><br>
-                    <input type="password" name="senha" id="senhalogin" required 
+                    <input type="password" name="senha" id="senhalogin" 
                     pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
                     <div class="requisitos-senha">
                         <p>Sua senha deve conter:</p>
-                        <ul>
+                        <ul class="sem-pontos">
                             <li id="req-tamanho">Mínimo 8 caracteres</li>
                             <li id="req-maiuscula">Pelo menos 1 letra maiúscula</li>
                             <li id="req-minuscula">Pelo menos 1 letra minúscula</li>
@@ -170,13 +165,8 @@
                     </div>
                 </div>
 
-
-
-
-
-
                 <div class="termo-politica">
-                    <input class="checkbox" type="checkbox" name="termo" id="termo" required>
+                    <input class="checkbox" type="checkbox" name="termo" id="termo">
                     <label for="termo">
                         Declaro que li e concordo com os <a href=""><strong>Termos e Condições</strong></a> e com a <a href=""><strong>Política de Privacidade.</strong></a>
                     </label>

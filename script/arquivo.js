@@ -5,6 +5,7 @@ let cpf = document.getElementById("cpf");
 let email = document.getElementById("email");
 let telefone = document.getElementById("phone");
 let cep = document.getElementById("cep");
+let sexo = document.getElementById("sexo");
 let rua = document.getElementById("rua");
 let numeroCasa = document.getElementById("numero-casa");
 let cidade = document.getElementById("cidade");
@@ -26,6 +27,7 @@ document.getElementById('senhalogin').addEventListener('input', function() {
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();
+    let valido = true;
 
     if (nome.value === "") {
         alert("Por favor, preencha o seu nome.");
@@ -58,6 +60,11 @@ form.addEventListener("submit", (event) => {
         return;
     }
 
+    if(comprovanteDeIdentidade.value === ""){
+        alert("Por favor, anexe o documento de identidade");
+        return;
+    }
+
     if (cep.value === "" || !validaCep(cep.value, 9)) {
         alert("O Cep deve conter 8 dígitos");
         return;
@@ -72,11 +79,6 @@ form.addEventListener("submit", (event) => {
         alert("Por favor, preencha com o número da sua casa");
         return;
     }
-    
-    if(comprovanteDeIdentidade.value === ""){
-        alert("Por favor, anexe o documento de identidade");
-        return;
-    }
 
     if(comprovanteDeResidencia.value === ""){
         alert("Por favor, anexe o comprovante de Residência ");
@@ -84,18 +86,8 @@ form.addEventListener("submit", (event) => {
     }
    
     if(senhalogin.value === ""){
-        alert("Por favor, preencha com sua senha");
+        alert("Por favor, crie uma senha");
         return ; 
-    }
-
-    if (comprovanteDeIdentidade.value === "") {
-        alert("Por favor, anexe o documento de identidade");
-        return;
-    }
-
-    if (comprovanteDeResidencia.value === "") {
-        alert("Por favor, anexe o comprovante de Residência");
-        return;
     }
 
     if (senhalogin.value === "" || !validarSenha(senhalogin.value, 8)) {
@@ -107,15 +99,12 @@ form.addEventListener("submit", (event) => {
         return; 
     }
 
-    
-    //form.submit();
-
-    document.getElementById("form").addEventListener("submit", function() {
-        setTimeout(function() {
-            alert("Formulário de inscrição enviado!");
+    if (valido) {
+        setTimeout(() => {
+            alert('Login realizado com sucesso!');
             window.location.href = "login.html";
-        }, 100);
-    });
+        }, 500);
+    }
 
 });
 
