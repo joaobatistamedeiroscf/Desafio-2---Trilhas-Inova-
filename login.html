@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body id="pagina-login">
+    
+    <main>
+        <section>
+            <form class="pagina-login-form" action="/action_page.php" method="post">
+
+                <h2>Login</h2>
+                <input class="pagina-login-form-text" type="text" placeholder="CPF" id="cpf">
+                <div class="senha-container">
+                    <input class="pagina-login-form-senha" type="password" placeholder="Senha" id="senha">
+                    <span class="mostrar-senha">🙈</span>
+                </div>
+                <input class="pagina-login-form-submit" type="submit" value="Entrar">
+                
+            </form>
+        </section>
+    </main>
+
+    <footer class="pagina-login-rodape">
+        <img src="imagensparafornulario/logo-trilhas-inova.png" alt="logo do trilhas e o logo do inova Maranhão">
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#cpf').mask('000.000.000-00');
+        });
+    </script>
+
+    <script src="script/arquivo.js"></script>
+
+</body>
+</html>

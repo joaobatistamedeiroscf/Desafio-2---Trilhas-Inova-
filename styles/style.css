@@ -1,0 +1,675 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Poppins:wght@400;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --cor-primaria: #57534E;
+    --cor-secundaria: #292524;
+    --cor-terciaria: #2135A6;
+    --cor-quaternaria: #D6D3D1;
+    --cor-quinta: #000000;
+    --cor-sexta: #E43A12;
+    --cor-setima: #F67841;
+    --cor-oitava: #F3541C;
+    --cor-nona: #A8A29E;
+    --cor-decima: #FFFFFF;
+
+    --fonte-primaria: "Poppins", sans-serif;
+    --fonte-secundaria: "Montserrat", sans-serif;
+}
+
+body{
+    box-sizing: border-box;
+    color: var(--cor-primaria);
+}
+
+.voltar{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1.5rem;
+}
+
+.voltar a{
+    color: var(--cor-primaria);
+    text-decoration: none;
+    font-family: var(--fonte-primaria);
+    font-weight: 400;
+    font-size: 1rem;
+    display: flex;
+    gap: 8px;
+}
+
+#principal{
+    display: flex;
+    justify-content: space-between;
+    gap: 64px;
+}
+
+.principal-formulario{
+    display: flex;
+    flex-direction: column;
+    margin: 64px 0 0 64px;
+}
+
+.principal-formulario-titulo{
+    font-family: var(--fonte-primaria);
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: var(--cor-secundaria);
+}
+
+.principal-formulario-texto-um{
+    font-family: var(--fonte-primaria);
+    font-weight: 400;
+    font-size: 1rem;
+    margin-top: 8px;
+}
+
+.formulario-primeiro-bloco{
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.primeiro-bloco-texto{
+    font-family: var(--fonte-primaria);
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--cor-secundaria);
+}
+
+label {
+    font-family: var(--fonte-primaria);
+    font-weight: 400;
+    font-size: 14px;   
+}
+
+.formulario-primeiro-bloco input, 
+.formulario-segundo-bloco input, select{
+    border: 1px solid var(--cor-quaternaria);
+    border-radius: 8px;
+    padding: 12px;
+    width: 528px;
+    font-family: var(--fonte-primaria);
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--cor-secundaria);
+}
+
+.formulario-primeiro-bloco input:focus, 
+.formulario-segundo-bloco input:focus {
+    border: 2px solid var(--cor-setima) !important;
+    outline: none;
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--cor-setima) 20%, transparent 80%);
+    transition: all 0.3s ease;
+}
+
+.formulario-primeiro-bloco select{
+    border: 1px solid var(--cor-quaternaria);
+    border-radius: 8px;
+    color: var(--cor-quinta);
+    padding: 12px;
+    width: 554px;
+    background-image: url("/imagensparafornulario/seta\ para\ baixo.png");
+    background-repeat: no-repeat;
+    background-position: center right;
+    appearance: none !important;
+    cursor: pointer;
+}
+
+.option{
+    color: var(--cor-secundaria);
+}
+
+.texto-identidade{
+    font-family: var(--fonte-primaria);
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--cor-primaria);
+}
+
+.file-identidade{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px dashed var(--cor-quaternaria);
+    border-radius: 8px;
+    width: 550px;
+    height: 160px;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    font-family: var(--fonte-primaria);
+    font-size: 16px;
+    color: var(--cor-nona);
+}
+
+.file-identidade input{
+    opacity: 0;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.formulario-segundo-bloco{
+    padding-top: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.sugundo-bloco-texto{
+    font-family: var(--fonte-primaria);
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--cor-secundaria);
+}
+
+#rua, #cidade{
+    width: 300px;
+}
+
+#numero-casa, #estado{
+    width: 176px;
+}
+
+.formulario-segundo-bloco-metade{
+    box-sizing: border-box;
+    width: 560px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.texto-residencia{
+    font-family: var(--fonte-primaria);
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--cor-primaria);
+}
+
+.file-residencia{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px dashed var(--cor-quaternaria);
+    border-radius: 8px;
+    width: 550px;
+    height: 160px;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    font-family: var(--fonte-primaria);
+    font-size: 16px;
+    color: var(--cor-nona);
+}
+
+.file-residencia input{
+    opacity: 0;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.trilha-apredizagem-subtilulo{
+    font-family: var(--fonte-primaria);
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--cor-secundaria);
+    padding-top: 48px;
+    padding-bottom: 24px;
+}
+
+.trilha-apredizagem-texto{
+    font-family: var(--fonte-primaria);
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--cor-primaria);
+    padding-bottom: 16px;
+}
+
+.formulario-terceiro-bloco > *{
+    border: 1px solid var(--cor-quaternaria);
+    border-radius: 8px;
+    width: 267px;
+    height: 120px;
+}
+
+.formulario-terceiro-bloco{
+    box-sizing: border-box;
+    width: 560px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.formulario-terceiro-bloco div:has(input:checked){
+    border: 2px solid var(--cor-oitava);
+    border-radius: 8px;
+}
+
+.trilha-front-end, 
+.trilha-back-end, 
+.trilha-jogos, 
+.trilha-design, 
+.trilha-dados{
+    text-align: center;
+    font-family: var(--fonte-secundaria);
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--cor-secundaria);
+}
+
+.radio{
+    display: flex;
+    margin: 8px 0 10px 8px;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--cor-quaternaria);
+    border-radius: 50%;
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    cursor: pointer;
+}
+
+.radio:before{
+    display: flex;
+    content: '';
+    width: 24px;
+    height: 24px;
+    background-image: url('/imagensparafornulario/check2.png');
+    background-repeat: no-repeat;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 600ms;
+    position: absolute;
+}
+
+.radio:checked:before{
+    opacity: 1;
+}
+
+.termo-politica{
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    font-family: var(--fonte-primaria);
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--cor-quinta);
+    padding: 48px 0;
+    width: 528px;
+}
+
+.checkbox{
+    cursor: pointer;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--cor-nona);
+    border-radius: 5px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+}
+
+.checkbox:before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    opacity: 0;
+    position: absolute;
+    border-radius: 0;
+    border: 3px solid var(--cor-setima);
+    border-left: 0;
+    border-top: 0;
+    width: 5px;
+    height: 10px;
+    transform: rotate(45deg);
+    top: 1px;
+  }
+
+  .checkbox:checked:before{
+    opacity: 1;
+  }
+
+.termo-politica strong{
+    font-family: var(--fonte-primaria);
+    font-weight: 500;
+    color: var(--cor-sexta);
+}
+
+.termo-politica a{
+    text-decoration: none;
+}
+
+.imagens-lateral{
+    background-color: var(--cor-terciaria);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: sticky;
+    top: 0;
+}
+
+.imagens-lateral-um{
+    padding-top: 105px;
+    padding-bottom: 50px;
+    padding-left: 56px;
+    padding-right: 68px;
+    width: 500px;
+    height: 500px;
+}
+
+.imagens-lateral-dois{
+    padding-bottom: 80px;
+    width: 212.25px;
+    height: 26.49px;
+}
+
+.botao-final{
+    display: flex;
+    justify-content: flex-end;
+    width: 545px;
+    gap: 16px;
+    margin-bottom: 64px;
+
+}
+
+.fazer-inscricao{
+    background-color: var(--cor-sexta);
+    padding: 12px 24px;
+    font-family: var(--fonte-primaria);
+    font-weight: 500;
+    font-size: 16px;
+    border-radius: 8px;
+    color: var(--cor-decima);
+    border: 1px solid var(--cor-sexta);
+    cursor: pointer;
+}
+
+.cancelar{
+    padding: 12px 24px;
+    font-family: var(--fonte-primaria);
+    font-weight: 500;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid var(--cor-sexta);
+    background-color: var(--cor-decima);
+    color: var(--cor-sexta);
+    cursor: pointer;
+}
+
+#pagina-login{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--cor-terciaria);
+    width: 100%;
+
+}
+
+.pagina-login-form{
+    display: flex;
+    flex-direction: column;
+    margin: 13rem auto;
+    font-family: var(--fonte-primaria);
+    font-weight: 500;
+    font-size: 1rem;
+    text-align: center;
+    color: var(--cor-quinta);
+}
+
+.pagina-login-form-text, 
+.pagina-login-form-senha {
+    margin: 0.50rem auto;
+    width: 22rem;
+    padding: 0.75rem;
+    border-radius: 8px;
+    border: var(--cor-terciaria);
+    color: var(--cor-quinta);
+    font-family: var(--fonte-primaria);
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+#pagina-login input[type="text"]:focus, 
+#pagina-login input[type="password"]:focus {
+    border: 2px solid var(--cor-setima) !important;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(246, 120, 65, 0.3);
+}
+
+.senha-container {
+    position: relative;
+    width: 379px;
+    margin: 0 auto;
+}
+  
+.mostrar-senha {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    user-select: none;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+  
+.mostrar-senha:hover {
+    opacity: 1;
+}
+
+.pagina-login-form-submit {
+    width: 13rem;
+    background-color: var(--cor-sexta);
+    padding: 0.75rem;
+    font-family: var(--fonte-primaria);
+    font-weight: 500;
+    font-size: 1rem;
+    border-radius: 8px;
+    color: var(--cor-decima);
+    border: var(--cor-sexta);
+    cursor: pointer;
+    margin: 0.50rem auto;
+}
+
+.pagina-login-rodape {
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+}
+
+
+.campo-login input {
+    width: 100% !important;
+    margin-bottom: 16px; 
+    padding: 12px;
+    border: 1px solid var(--cor-quaternaria);
+    border-radius: 8px;
+}
+
+.campo-login input:focus {
+    border:2px solid var(--cor-setima) !important ;
+    outline: none !important;
+}
+
+
+
+
+
+@media (max-width: 1200px) {
+    #principal { 
+        gap: 32px;
+        padding: 0 32px;
+    } 
+    
+    .imagens-lateral-um {
+        width: 400px;
+        height: auto;
+        padding: 50px 30px;
+    }
+}
+
+@media (max-width: 992px){
+    .principal-formulario {
+        margin: 64px 32px 0;
+    }
+    
+    .formulario-primeiro-bloco input,
+    .formulario-segundo-bloco input,
+    select,
+    .file-identidade,
+    .file-residencia {
+        width: 100% !important;
+    }
+
+    .formulario-segundo-bloco-metade {
+        width: 100% !important;
+    }
+
+    #rua, #cidade, #numero-casa, #estado {
+        width: 100% !important;
+    }
+
+    .formulario-terceiro-bloco {
+        width: 100% !important;
+    }
+
+    
+    .termo-politica {
+        width: 100% !important;
+    }
+
+    .botao-final {
+        width: 100% !important;
+    }
+
+   
+    .imagens-lateral-um {
+        width: 300px;
+        padding: 0 20px;
+    }
+    .campo-login input:focus {
+        border:2px solid var(--cor-setima) !important ;
+        outline: none;
+        
+    }
+}
+
+@media (max-width: 768px) {
+    #principal {
+        flex-direction: column;
+        gap: 0;
+        padding: 0 16px;
+    }
+
+    .principal-formulario {
+        margin: 32px 0 0;
+    }
+
+    .principal-formulario-titulo {
+        font-size: 1.25rem;
+    }
+
+    .formulario-primeiro-bloco,
+    .formulario-segundo-bloco {
+        margin-top: 32px;
+    }
+
+    .formulario-terceiro-bloco > * {
+        width: 100% !important;
+    }
+
+    .imagens-lateral {
+        flex-direction: row;
+        justify-content: center;
+        gap: 40px;
+        background-color: transparent;
+    }
+
+    .imagens-lateral-um {
+        display: none;
+    }
+
+    .imagens-lateral-dois {
+        padding: 20px 0;
+    }
+
+    .botao-final {
+        flex-direction: column;
+        margin-bottom: 32px;
+    }
+
+    .cancelar, .fazer-inscricao {
+        width: 100%;
+        text-align: center;
+    }
+    .campos-login input {
+        width: 100% !important;
+        margin:24px 0 ; 
+    }
+
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 0.875rem;
+    }
+
+    .principal-formulario-titulo {
+        font-size: 1.1rem;
+    }
+
+    .principal-formulario-texto-um {
+        font-size: 0.9rem;
+    }
+
+    label, .texto-identidade, .texto-residencia {
+        font-size: 0.8125rem !important;
+    }
+
+    input, select {
+        font-size: 0.875rem !important;
+        padding: 10px !important;
+    }
+
+    .file-identidade, .file-residencia {
+        height: 120px !important;
+        font-size: 0.875rem !important;
+    }
+
+    .termo-politica {
+        font-size: 0.875rem !important;
+        padding: 32px 0 !important;
+    }
+
+    .trilha-front-end, 
+    .trilha-back-end, 
+    .trilha-jogos, 
+    .trilha-design, 
+    .trilha-dados {
+        font-size: 0.875rem !important;
+    }
+}
