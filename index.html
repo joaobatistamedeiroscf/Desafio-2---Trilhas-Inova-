@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -198,3 +199,228 @@
     
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de inscrição</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <header>
+    </header>
+    <main id="principal">
+        <section class="principal-formulario">
+            <div class="voltar">
+                <a href="index.html"> <img src="imagensparafornulario/setinha.png"> Voltar</a>
+            </div>
+            <h2 class="principal-formulario-titulo">Formulário de inscrição</h2>
+            <p class="principal-formulario-texto-um">Preencha os dados abaixo para fazer sua inscrição no Programa Trilhas.</p>
+            
+            <form id="form" action="" method="post">
+
+                <div class="formulario-primeiro-bloco">
+                    <p class="primeiro-bloco-texto"><strong>Informações do participante</strong></p>
+
+                    <div>
+                        <label for="nome">Nome completo</label><br>
+                        <input type="text" name="nome" id="nome" >
+                    </div>
+                    
+
+                    <div>
+                        <label for="data">Data de nascimento</label><br>
+                        <input type="date" name="data" id="data">
+                    </div>
+
+                    <div>
+                        <label for="cpf">CPF</label><br>
+                        <input type="text" name="cpf" id="cpf" >
+                    </div>
+
+                    <div>
+                        <label for="sexo">Sexo</label><br>
+                        <select id="sexo" name="sexo">
+                            <option selected disabled value="">Selecione</option>
+                            <option class="option" value="Masculino">Masculino</option>
+                            <option class="option" value="Femenino">Feminino</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="email">E-mail</label><br>
+                        <input type="email" name="email" id="email">
+                    </div>
+                    
+                    <div>
+                        <label for="phone">Telefone</label><br>
+                        <input type="text" name="phone" id="phone">
+                    </div>
+
+                    <div>
+                        <p class="texto-identidade" >Documentação de identidade</p>
+                        <div class="file-identidade">
+                            <img src="imagensparafornulario/nuvem.png" width="48px" height="48px">
+                            <p>Clique aqui para selecionar o arquivo</p>
+                            <input type="file" name="identidade" id="identidade" >
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="formulario-segundo-bloco">
+                    <p class="sugundo-bloco-texto">Endereço residencial</p>
+
+                    <div>
+                        <label for="cep">CEP</label><br>
+                        <input type="text" name="cep" id="cep" onblur="buscarCep(this.value)">
+                    </div>
+
+                    <div class="formulario-segundo-bloco-metade">
+                        <div>
+                            <label for="rua">Rua</label><br>
+                            <input type="text" name="rua" id="rua">
+                        </div>
+
+                        <div>
+                            <label for="numero-casa">Número</label><br>
+                            <input type="text" name="numero-casa" id="numero-casa">
+                        </div>
+
+                        <div>
+                            <label for="cidade">Cidade</label><br>
+                            <input type="text" name="cidade" id="cidade">
+                        </div>
+
+                        <div>
+                              <label for="estado">Estado</label><br>
+                            <input type="text" name="estado" id="estado">
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="texto-residencia">Comprovante de residência</p>
+                        <div class="file-residencia">
+                            <img src="imagensparafornulario/nuvem.png" width="48px" height="48px">
+                            <p>Clique aqui para selecionar o arquivo</p>
+                            <input type="file" name="residencia" id="residencia" >
+                        </div>
+                    </div>
+                </div>
+
+                <p class="trilha-apredizagem-subtilulo">Trilhas de aprendizagem</p>
+
+                <p class="trilha-apredizagem-texto">Selecione apenas uma trilha</p>
+
+                <div class="formulario-terceiro-bloco">
+
+                    <div class="trilha-front-end">
+                        <input class="radio" type="radio" id="front-end" name="trilha" checked="checked">
+                        <img src="imagensparafornulario/front-end.png"><br>
+                        <label for="front-end">Programação Front-end</label>
+                    </div>
+
+                    <div class="trilha-back-end">
+                        <input class="radio" type="radio" id="back-end" name="trilha">
+                        <img src="imagensparafornulario/back-end.png"><br>
+                        <label for="back-end">Programação Back-end</label>
+                    </div>
+
+                    <div class="trilha-jogos">
+                        <input class="radio" type="radio" id="jogos" name="trilha">
+                        <img src="imagensparafornulario/jogos.png"><br>
+                        <label for="jogos">Programação de Jogos</label>
+                    </div>
+
+                    <div class="trilha-design">
+                        <input class="radio" type="radio" id="design" name="trilha">
+                        <img src="imagensparafornulario/ux.png"><br>
+                        <label for="design">Design e Experiência</label>
+                    </div>
+
+                    <div class="trilha-dados">
+                        <input class="radio" type="radio" id="dados" name="trilha">
+                        <img src="imagensparafornulario/ciencia de dados.png"><br>
+                        <label for="dados">Ciência de Dados</label>
+                    </div> 
+
+                </div>
+
+                <br>
+
+                <div class="campo-login">
+                    <p class="campo-login-senha">Crie um senha</p>
+                    <label for="senha">Senha</label><br>
+                    <input type="password" name="senha" id="senhalogin" 
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                    <div class="requisitos-senha">
+                        <p>Sua senha deve conter:</p>
+                        <ul class="sem-pontos">
+                            <li id="req-tamanho">Mínimo 8 caracteres</li>
+                            <li id="req-maiuscula">Pelo menos 1 letra maiúscula</li>
+                            <li id="req-minuscula">Pelo menos 1 letra minúscula</li>
+                            <li id="req-numero">Pelo menos 1 número</li>
+                            <li id="req-especial">Pelo menos 1 caractere especial (!@#$%^&*)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="termo-politica">
+                    <input class="checkbox" type="checkbox" name="termo" id="termo">
+                    <label for="termo">
+                        Declaro que li e concordo com os <a href=""><strong>Termos e Condições</strong></a> e com a <a href=""><strong>Política de Privacidade.</strong></a>
+                    </label>
+                </div>
+
+
+
+
+
+
+
+
+                <div class="botao-final">
+                    <button class="salvar-dados">Salvar</button>
+                    <button class="cancelar" type="reset">Cancelar</button>
+                    <button class="fazer-inscricao" type="submit" onclick="">Fazer inscrição</button>
+                </div>
+                
+                
+
+
+
+
+
+
+            </form>
+        </section>
+
+        <section>
+            <div class="imagens-lateral">
+                <img class="imagens-lateral-um" src="imagensparafornulario/Ilustration.png">
+                <img class="imagens-lateral-dois" src="imagensparafornulario/logo-trilhas-inova.png">
+            </div>
+        </section>
+
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#cpf').mask('000.000.000-00');
+            $('#phone').mask('(00) 00000-0000');
+            $('#cep').mask('00000-000');
+            $('#numero-casa').mask('0000000');
+        });
+    </script>
+
+    <script src="script/arquivo.js"></script>
+    
+    <footer></footer>
+    
+</body>
+</html>
+>>>>>>> a39816be49052ff7d146b091a6da24f496b6d8a7
