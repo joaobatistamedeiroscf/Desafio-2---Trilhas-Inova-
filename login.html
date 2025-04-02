@@ -16,24 +16,24 @@
                     <p>Faça login para acessar sua conta</p>
                 </div>
 
-                <form class="pagina-login-form">
+                <form class="pagina-login-form" method="post">
 
                     <div class="pagina-login-form-campo">
                         <label for="cpf">CPF</label>
-                        <input type="text" id="cpf" name="cpf" required>
-                        <p class="mensagem-erro" id="erro-email"></p>
+                        <input type="text" id="cpf" name="cpf">
+                        <p class="mensagem-erro" id="erro-cpf"></p>
                     </div>
 
                     <div class="pagina-login-form-campo">
                         <label for="senha">Senha</label>
                         <div class="pagina-login-form-campo-senha">
-                            <input type="password" id="senha" name="senha" required minlength="8">
+                            <input type="password" id="senha" name="senha">
                             <span class="mostrar-senha">🙈</span>
                         </div>
                         <p class="mensagem-erro" id="erro-senha"></p>
                     </div>
 
-                    <input class="pagina-login-form-submit" type="submit" value="Entrar">
+                    <button class="pagina-login-form-submit" type="submit">Entrar</button>
                     
                 </form>
 

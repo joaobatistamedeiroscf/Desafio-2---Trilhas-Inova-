@@ -406,6 +406,11 @@ label {
     border-radius: 8px;
 }
 
+.sem-pontos {
+    list-style-type: none;
+    padding: 5px;
+}
+
 .botao-final{
     display: flex;
     justify-content: flex-end;
