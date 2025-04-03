@@ -196,4 +196,3 @@ function senhaForte(senhafo) {
     }
     return true;
 }
-
