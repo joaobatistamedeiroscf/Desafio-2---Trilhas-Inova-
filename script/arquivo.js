@@ -44,8 +44,8 @@ form.addEventListener("submit", (event) => {
         return;
     }
 
-    if(sexo === ""){
-        alert("Por favor, escolha o sexo");
+    if(sexo.value != "Masculino" && sexo.value != "Feminino"){
+        alert("Por favor, selecione o sexo");  
         return;
     }
 
@@ -100,8 +100,34 @@ form.addEventListener("submit", (event) => {
     }
 
     if (valido) {
+
+        let listaUser = JSON.parse(localStorage.getItem('listaUser') || '[]')
+
+        listaUser.push(
+            {
+            nome: nome.value,
+            dataDeNascimento: data.value,
+            CPF: cpf.value,
+            sexo: sexo.value,
+            email: email.value,
+            telefone: telefone.value,
+            CEP: cep.value,
+            rua: rua.value, 
+            numero: numeroCasa.value,
+            cidade: cidade.value, 
+            Estado: estado.value,
+            //trilha: trilha.value,
+            senha: senhalogin.value,
+            identidade: comprovanteDeIdentidade.value,
+            residencia: comprovanteDeResidencia.value
+        }
+        )
+
+        localStorage.setItem("listaUser", JSON.stringify(listaUser))
+
+        alert('Inscrição realizada com sucesso!');
+
         setTimeout(() => {
-            alert('Login realizado com sucesso!');
             window.location.href = "login.html";
         }, 500);
     }
