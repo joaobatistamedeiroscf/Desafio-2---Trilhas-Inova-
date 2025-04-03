@@ -556,8 +556,12 @@ label {
     margin: 0.50rem auto;
 }
 
-.mensagem-erro {
+#mensagem-erro {
+    text-align: center;
     color: var(--cor-sexta);
+    background-color: #ffbbbb;
+    padding: 10px;
+    border-radius: 4px;
     font-size: 0.875rem;
     display: none;
 }
