@@ -10,6 +10,7 @@ let rua = document.getElementById("rua");
 let numeroCasa = document.getElementById("numero-casa");
 let cidade = document.getElementById("cidade");
 let estado = document.getElementById("estado");
+let trilha = document.getElementById('');
 let comprovanteDeIdentidade = document.getElementById("identidade");
 let comprovanteDeResidencia = document.getElementById("residencia");
 let senhalogin = document.getElementById("senhalogin");
