@@ -26,7 +26,7 @@ document.getElementById('senhalogin').addEventListener('input', function() {
 });
 
 
-form.addEventListener("submit", (event) => {
+form.addEventListener("submit", async (event) => {
     event.preventDefault();
     let valido = true;
 
@@ -45,7 +45,7 @@ form.addEventListener("submit", (event) => {
         return;
     }
 
-    if(sexo.value != "Masculino" && sexo.value != "Feminino"){
+    if(sexo.value != "Masculino" && sexo.value != "Femenino"){
         alert("Por favor, selecione o sexo");  
         return;
     }
@@ -100,40 +100,79 @@ form.addEventListener("submit", (event) => {
         return; 
     }
 
+    const file1 = comprovanteDeIdentidade.files[0];
+    const file2 = comprovanteDeResidencia.files[0];
+
+    if (!file1 || !file2) {
+        alert("Por favor, anexe ambos os documentos.");
+        return;
+    }
+
     if (valido) {
+        try {
+            await saveFile();
 
-        let listaUser = JSON.parse(localStorage.getItem('listaUser') || '[]')
+            let listaUser = JSON.parse(localStorage.getItem('listaUser') || '[]');
 
-        listaUser.push(
-            {
-            nome: nome.value,
-            dataDeNascimento: data.value,
-            CPF: cpf.value,
-            sexo: sexo.value,
-            email: email.value,
-            telefone: telefone.value,
-            CEP: cep.value,
-            rua: rua.value, 
-            numero: numeroCasa.value,
-            cidade: cidade.value, 
-            Estado: estado.value,
-            //trilha: trilha.value,
-            senha: senhalogin.value,
-            identidade: comprovanteDeIdentidade.value,
-            residencia: comprovanteDeResidencia.value
+            listaUser.push({
+                nome: nome.value,
+                dataDeNascimento: data.value,
+                CPF: cpf.value,
+                sexo: sexo.value,
+                email: email.value,
+                telefone: telefone.value,
+                CEP: cep.value,
+                rua: rua.value,
+                numero: numeroCasa.value,
+                cidade: cidade.value,
+                Estado: estado.value,
+                senha: senhalogin.value,
+                identidade: localStorage.getItem('pdf1_identidade'),
+                residencia: localStorage.getItem('pdf2_residencia')
+            });
+
+            localStorage.setItem("listaUser", JSON.stringify(listaUser));
+
+            alert('Inscrição realizada com sucesso!');
+            setTimeout(() => {
+                window.location.href = "login.html";
+            }, 500);
+        } catch (error) {
+            console.error("Erro ao salvar dados:", error);
+            alert("Ocorreu um erro ao salvar seus dados. Tente novamente.");
         }
-        )
-
-        localStorage.setItem("listaUser", JSON.stringify(listaUser))
-
-        alert('Inscrição realizada com sucesso!');
-
-        setTimeout(() => {
-            window.location.href = "login.html";
-        }, 500);
     }
 
 });
+
+function saveFile() {
+    return new Promise((resolve, reject) => {
+        const file1 = comprovanteDeIdentidade.files[0];
+        const file2 = comprovanteDeResidencia.files[0];
+
+        const reader1 = new FileReader();
+        const reader2 = new FileReader();
+
+        reader1.onload = function(e) {
+            const pdf1Base64 = e.target.result;
+            localStorage.setItem('pdf1', pdf1Base64);
+            localStorage.setItem('pdf1_identidade', file1.name);
+
+            reader2.onload = function(e) {
+                const pdf2Base64 = e.target.result;
+                localStorage.setItem('pdf2', pdf2Base64);
+                localStorage.setItem('pdf2_residencia', file2.name);
+                resolve(); // Sucesso
+            };
+
+            reader2.onerror = () => reject(new Error("Falha ao ler comprovante de residência"));
+            reader2.readAsDataURL(file2);
+        };
+
+        reader1.onerror = () => reject(new Error("Falha ao ler comprovante de identidade"));
+        reader1.readAsDataURL(file1);
+    });
+}
 
 function validaEmail(email) {
     let emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -196,3 +235,6 @@ function senhaForte(senhafo) {
     }
     return true;
 }
+
+
+
