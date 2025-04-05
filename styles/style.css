@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Poppins:wght@400;600&display=swap');
 
 *{
@@ -406,11 +407,6 @@ label {
     border-radius: 8px;
 }
 
-.sem-pontos {
-    list-style-type: none;
-    padding: 5px;
-}
-
 .botao-final{
     display: flex;
     justify-content: flex-end;
@@ -556,12 +552,8 @@ label {
     margin: 0.50rem auto;
 }
 
-#mensagem-erro {
-    text-align: center;
+.mensagem-erro {
     color: var(--cor-sexta);
-    background-color: #ffbbbb;
-    padding: 10px;
-    border-radius: 5px;
     font-size: 0.875rem;
     display: none;
 }
