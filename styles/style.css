@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Poppins:wght@400;600&display=swap');
 
 *{
@@ -554,7 +553,7 @@ label {
 
 .mensagem-erro {
     color: var(--cor-sexta);
-    font-size: 0.875rem;
+    font-size: 0.875rem;  
     display: none;
 }
 
