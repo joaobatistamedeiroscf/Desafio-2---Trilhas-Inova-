@@ -1,21 +1,25 @@
-let form = document.getElementById("form");
-let nome = document.getElementById("nome");
-let data = document.getElementById("data");
-let cpf = document.getElementById("cpf");
-let email = document.getElementById("email");
-let telefone = document.getElementById("phone");
-let cep = document.getElementById("cep");
-let sexo = document.getElementById("sexo");
-let rua = document.getElementById("rua");
-let numeroCasa = document.getElementById("numero-casa");
-let cidade = document.getElementById("cidade");
-let estado = document.getElementById("estado");
-let trilha = document.getElementById('');
-let comprovanteDeIdentidade = document.getElementById("identidade");
-let comprovanteDeResidencia = document.getElementById("residencia");
-let senhalogin = document.getElementById("senhalogin");
+const form = document.getElementById("form");
+const nome = document.getElementById("nome");
+const data = document.getElementById("data");
+const cpf = document.getElementById("cpf");
+const email = document.getElementById("email");
+const telefone = document.getElementById("phone");
+const cep = document.getElementById("cep");
+const sexo = document.getElementById("sexo");
+const rua = document.getElementById("rua");
+const numeroCasa = document.getElementById("numero-casa");
+const cidade = document.getElementById("cidade");
+const estado = document.getElementById("estado");
+const trilhas = document.querySelectorAll("input[name='trilha']");
+const comprovanteDeIdentidade = document.getElementById("identidade");
+const comprovanteDeResidencia = document.getElementById("residencia");
+const senhalogin = document.getElementById("senhalogin");
 
-document.getElementById('senhalogin').addEventListener('input', function() {
+// Variável para armazenar a trilha selecionada
+let trilhaSelecionada = null;
+
+// Validação de senha em tempo real
+senhalogin.addEventListener('input', function() {
     const senha = this.value;
     
     document.getElementById('req-tamanho').style.color = senha.length >= 8 ? 'green' : 'red';
@@ -25,127 +29,113 @@ document.getElementById('senhalogin').addEventListener('input', function() {
     document.getElementById('req-especial').style.color = /[!@#$%^&*]/.test(senha) ? 'green' : 'red';
 });
 
+// Atualiza a trilha selecionada quando o usuário escolhe
+trilhas.forEach(trilha => {
+    trilha.addEventListener('change', function() {
+        if(this.checked) {
+            trilhaSelecionada = this.value;
+        }
+    });
+});
 
+// Validação do formulário ao enviar
 form.addEventListener("submit", async (event) => {
     event.preventDefault();
-    let valido = true;
+    
+    // Validação dos campos
+    if (!validarCampos()) {
+        return;
+    }
 
+    try {
+        // Salva os arquivos primeiro
+        await salvarArquivos();
+
+        // Salva os dados do usuário
+        salvarDadosUsuario();
+
+        alert('Inscrição realizada com sucesso!');
+        setTimeout(() => {
+            window.location.href = "login.html";
+        }, 500);
+    } catch (error) {
+        console.error("Erro ao salvar dados:", error);
+        alert("Ocorreu um erro ao salvar seus dados. Tente novamente.");
+    }
+});
+
+// Função para validar todos os campos
+function validarCampos() {
     if (nome.value === "") {
         alert("Por favor, preencha o seu nome.");
-        return;
+        return false;
     }
 
-    if(data.value ===""){
-        alert("Por favor, informe sua data de nascimento");
-        return;
+    if (data.value === "") {
+        alert("Por favor, informe sua data de nascimento.");
+        return false;
     }
 
-    if (cpf.value ==="" || !validaDigitosCpf(cpf.value, 14)) {
-        alert("Por favor, preencha corretamente, o CPF deve conter 11 dígitos.");
-        return;
+    if (cpf.value === "" || !validarCPF(cpf.value)) {
+        alert("Por favor, preencha corretamente o CPF (11 dígitos).");
+        return false;
     }
 
-    if(sexo.value != "Masculino" && sexo.value != "Femenino"){
-        alert("Por favor, selecione o sexo");  
-        return;
+    if (sexo.value !== "Masculino" && sexo.value !== "Feminino") {
+        alert("Por favor, selecione o sexo.");  
+        return false;
     }
 
-
-    if (email.value === "" || !validaEmail(email.value)) {
+    if (email.value === "" || !validarEmail(email.value)) {
         alert("Por favor, preencha com um e-mail válido.");
-        return;
+        return false;
     }
 
-    if (telefone.value === "" || !validaDigitoTelefone(telefone.value, 15)) {
+    if (telefone.value === "" || !validarTelefone(telefone.value)) {
         alert("O telefone deve conter 11 dígitos, incluindo o DDD.");
-        return;
+        return false;
     }
 
-    if(comprovanteDeIdentidade.value === ""){
-        alert("Por favor, anexe o documento de identidade");
-        return;
+    if (!comprovanteDeIdentidade.files[0]) {
+        alert("Por favor, anexe o documento de identidade.");
+        return false;
     }
 
-    if (cep.value === "" || !validaCep(cep.value, 9)) {
-        alert("O Cep deve conter 8 dígitos");
-        return;
+    if (cep.value === "" || !validarCEP(cep.value)) {
+        alert("O CEP deve conter 8 dígitos.");
+        return false;
     }
 
     if (rua.value === "") {
-        alert("Por favor, preencha com o nome da sua rua");
-        return;
+        alert("Por favor, preencha com o nome da sua rua.");
+        return false;
     }
 
     if (numeroCasa.value === "") {
-        alert("Por favor, preencha com o número da sua casa");
-        return;
+        alert("Por favor, preencha com o número da sua casa.");
+        return false;
     }
 
-    if(comprovanteDeResidencia.value === ""){
-        alert("Por favor, anexe o comprovante de Residência ");
-        return ;
+    if (!comprovanteDeResidencia.files[0]) {
+        alert("Por favor, anexe o comprovante de residência.");
+        return false;
     }
    
-    if(senhalogin.value === ""){
-        alert("Por favor, crie uma senha");
-        return ; 
+    if (senhalogin.value === "" || !validarSenha(senhalogin.value)) {
+        alert("A senha deve conter pelo menos 8 caracteres, incluindo letras maiúsculas, minúsculas, números e caracteres especiais.");
+        return false;
     }
 
-    if (senhalogin.value === "" || !validarSenha(senhalogin.value, 8)) {
-        alert("Por favor, preencha com sua senha, a senha deve conter pelo menos 8 caracteres");
-        return;
+    if (!trilhaSelecionada) {
+        alert("Por favor, selecione uma trilha.");
+        return false;
     }
 
-    if (!senhaForte(senhalogin.value)) {
-        return; 
-    }
+    return true;
+}
 
-    const file1 = comprovanteDeIdentidade.files[0];
-    const file2 = comprovanteDeResidencia.files[0];
-
-    if (!file1 || !file2) {
-        alert("Por favor, anexe ambos os documentos.");
-        return;
-    }
-
-    if (valido) {
-        try {
-            await saveFile();
-
-            let listaUser = JSON.parse(localStorage.getItem('listaUser') || '[]');
-
-            listaUser.push({
-                nome: nome.value,
-                dataDeNascimento: data.value,
-                CPF: cpf.value,
-                sexo: sexo.value,
-                email: email.value,
-                telefone: telefone.value,
-                CEP: cep.value,
-                rua: rua.value,
-                numero: numeroCasa.value,
-                cidade: cidade.value,
-                Estado: estado.value,
-                senha: senhalogin.value,
-                identidade: localStorage.getItem('pdf1_identidade'),
-                residencia: localStorage.getItem('pdf2_residencia')
-            });
-
-            localStorage.setItem("listaUser", JSON.stringify(listaUser));
-
-            alert('Inscrição realizada com sucesso!');
-            setTimeout(() => {
-                window.location.href = "login.html";
-            }, 500);
-        } catch (error) {
-            console.error("Erro ao salvar dados:", error);
-            alert("Ocorreu um erro ao salvar seus dados. Tente novamente.");
-        }
-    }
-
-});
-
-function saveFile() {
+// Função para salvar arquivos no localStorage
+function salvarArquivos() {
     return new Promise((resolve, reject) => {
         const file1 = comprovanteDeIdentidade.files[0];
         const file2 = comprovanteDeResidencia.files[0];
@@ -154,87 +144,96 @@ function saveFile() {
         const reader2 = new FileReader();
 
         reader1.onload = function(e) {
-            const pdf1Base64 = e.target.result;
-            localStorage.setItem('pdf1', pdf1Base64);
             localStorage.setItem('pdf1_identidade', file1.name);
+            localStorage.setItem('pdf1_data', e.target.result);
 
             reader2.onload = function(e) {
-                const pdf2Base64 = e.target.result;
-                localStorage.setItem('pdf2', pdf2Base64);
                 localStorage.setItem('pdf2_residencia', file2.name);
-                resolve(); // Sucesso
+                localStorage.setItem('pdf2_data', e.target.result);
+                resolve();
             };
 
-            reader2.onerror = () => reject(new Error("Falha ao ler comprovante de residência"));
+            reader2.onerror = () => reject("Falha ao ler comprovante de residência");
             reader2.readAsDataURL(file2);
         };
 
-        reader1.onerror = () => reject(new Error("Falha ao ler comprovante de identidade"));
+        reader1.onerror = () => reject("Falha ao ler comprovante de identidade");
         reader1.readAsDataURL(file1);
     });
 }
 
-function validaEmail(email) {
-    let emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    return emailRegex.test(email);
+// Função para salvar os dados do usuário
+function salvarDadosUsuario() {
+    let listaUser = JSON.parse(localStorage.getItem('listaUser') || '[]');
+
+    listaUser.push({
+        Nome: nome.value,
+        DataDeNascimento: data.value,
+        CPF: cpf.value,
+        Sexo: sexo.value,
+        Email: email.value,
+        Telefone: telefone.value,
+        CEP: cep.value,
+        Rua: rua.value,
+        Numero: numeroCasa.value,
+        Cidade: cidade.value,
+        Estado: estado.value,
+        Trilha: trilhaSelecionada,
+        Senha: senhalogin.value,
+        Identidade: localStorage.getItem('pdf1_identidade'),
+        Residencia: localStorage.getItem('pdf2_residencia')
+    });
+
+    localStorage.setItem("listaUser", JSON.stringify(listaUser));
 }
 
-function validaDigitosCpf(cpf, cpfdigitoscpf) {
-    return cpf.length === cpfdigitoscpf;
+// Funções auxiliares de validação
+function validarEmail(email) {
+    return /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email);
 }
 
-function validaDigitoTelefone(telefone, digitostelefonecomdd) {
-    return telefone.length === digitostelefonecomdd;
+function validarCPF(cpf) {
+    // Remove caracteres não numéricos e verifica se tem 11 dígitos
+    return cpf.replace(/\D/g, '').length === 11;
 }
 
-function validaCep(cep, digitoscep) {
-    return cep.length === digitoscep;
+function validarTelefone(telefone) {
+    // Remove caracteres não numéricos e verifica se tem 11 dígitos
+    return telefone.replace(/\D/g, '').length === 11;
 }
 
-function validarSenha(senha, digitossenha) {
-    return senha.length >= digitossenha;
+function validarCEP(cep) {
+    // Remove caracteres não numéricos e verifica se tem 8 dígitos
+    return cep.replace(/\D/g, '').length === 8;
 }
 
+function validarSenha(senha) {
+    return senha.length >= 8 &&
+           /[A-Z]/.test(senha) &&
+           /[a-z]/.test(senha) &&
+           /[0-9]/.test(senha) &&
+           /[!@#$%^&*]/.test(senha);
+}
+
+// Busca CEP
 function buscarCep(cep) {
-    fetch('https://viacep.com.br/ws/' + cep + '/json/')
-        .then(response => {
-            if (!response.ok) {
-                alert('ERRO DE CONEXÃO');
-                return;
-            }
-            return response.json();
-        })
+    const cepNumerico = cep.replace(/\D/g, '');
+    
+    if (cepNumerico.length !== 8) return;
+
+    fetch(`https://viacep.com.br/ws/${cepNumerico}/json/`)
+        .then(response => response.json())
         .then(data => {
-            rua.value = data.logradouro;
-            cidade.value = data.localidade;
-            estado.value = data.uf;
+            if (!data.erro) {
+                rua.value = data.logradouro || '';
+                cidade.value = data.localidade || '';
+                estado.value = data.uf || '';
+            } else {
+                alert('CEP não encontrado');
+            }
+        })
+        .catch(error => {
+            console.error('Erro ao buscar CEP:', error);
+            alert('Erro ao buscar CEP. Verifique o número e tente novamente.');
         });
 }
-
-function senhaForte(senhafo) {
-    let temMaiuscula = /[A-Z]/.test(senhafo);
-    let temMinuscula = /[a-z]/.test(senhafo);
-    let temNumero = /[0-9]/.test(senhafo);
-    let temEspecial = /[!@#$%^&*(),.?":{}|<>]/.test(senhafo);
-
-    if (!temMaiuscula) {
-        alert("A senha deve conter pelo menos uma letra maiúscula.");
-        return false;
-    }
-    if (!temMinuscula) {
-        alert("A senha deve conter pelo menos uma letra minúscula.");
-        return false;
-    }
-    if (!temNumero) {
-        alert("A senha deve conter pelo menos um número.");
-        return false;
-    }
-    if (!temEspecial) {
-        alert("A senha deve conter pelo menos um caractere especial.");
-        return false;
-    }
-    return true;
-}
-
-
-
