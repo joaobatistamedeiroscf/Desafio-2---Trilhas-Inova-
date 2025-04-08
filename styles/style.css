@@ -439,6 +439,12 @@ label {
     cursor: pointer;
 }
 
+.mensagem-erro {
+    color: var(--cor-sexta);
+    font-size: 0.875rem;
+    display: none;
+}
+
 
 /*---Página de Login---*/
 
