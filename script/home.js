@@ -27,7 +27,7 @@ function loadPDFsFromLocalStorage() {
     const link1 = document.createElement('a');
     link1.href = pdf1Base64;
     link1.download = pdf1Name || 'documento1.pdf';
-    link1.textContent = 'Comprovante de identidade';
+    link1.innerHTML = 'Comprovante de identidade<br>';
     document.body.appendChild(link1);
   
     // Cria um link para download do PDF 2
@@ -37,5 +37,6 @@ function loadPDFsFromLocalStorage() {
     link2.textContent = 'Comprovante de residência';
     document.body.appendChild(link2);
   
-    console.log('PDFs recuperados!');
 }
+
+loadPDFsFromLocalStorage();
