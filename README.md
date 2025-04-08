@@ -52,13 +52,20 @@ Você pode abrir diretamente ou usar uma extensão como o Live Server do VS Code
 
 *Mensagens de erro 
 
-📱 Design responsivo para diferentes tamanhos de tela
+📱 Design responsivo:
 
-🔄 LocalStorage para salvar dados temporariamente
+*Interface adaptável para dispositivos móveis
 
-🔑 Login com CPF e senha após inscrição
+🔄 Uso do LocalStorage: 
+
+*Armazenamento temporário dos dados para evitar perda de informações
 
 💥 Ao final da inscrição, o sistema emitirá um alerta de que a inscrição foi realizada com sucesso.
+
+🔑  Login com CPF e senha após inscrição: 
+
+*O sistema conta com uma tela de login, onde o usuário utilizará seu CPF (como identificador) e a senha previamente cadastrada. Após a autenticação, o sistema exibirá a página de acompanhamento da inscrição.
+
 
 ## 👨‍💻 Time
 
