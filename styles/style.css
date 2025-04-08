@@ -415,7 +415,8 @@ label {
 
 }
 
-.fazer-inscricao{
+.fazer-inscricao,
+.pagina-home-sair {
     background-color: var(--cor-sexta);
     padding: 12px 24px;
     font-family: var(--fonte-primaria);
@@ -448,7 +449,7 @@ label {
 
 /*---Página de Login---*/
 
-#pagina-login{
+#pagina-login, #pagina-home{
     font-family: var(--fonte-primaria);
     background-color: var(--cor-terciaria);
     color: var(--cor-decima);
@@ -588,6 +589,12 @@ label {
     text-align: center;
     padding: 1rem;
     margin-top: auto;
+}
+
+/*--- Página Home --*/
+
+#pagina-home a{
+    color: var(--cor-decima);
 }
 
 
