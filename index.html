@@ -44,7 +44,7 @@
                         <select id="sexo" name="sexo">
                             <option selected disabled value="">Selecione</option>
                             <option class="option" value="Masculino">Masculino</option>
-                            <option class="option" value="Femenino">Feminino</option>
+                            <option class="option" value="Feminino">Feminino</option>
                         </select>
                     </div>
 
@@ -116,31 +116,31 @@
                 <div class="formulario-terceiro-bloco">
 
                     <div class="trilha-front-end">
-                        <input class="radio" type="radio" id="front-end" name="trilha" checked="checked">
+                        <input class="radio" type="radio" id="front-end" name="trilha" value="Front-end" checked="checked">
                         <img src="imagensparafornulario/front-end.png"><br>
                         <label for="front-end">Programação Front-end</label>
                     </div>
 
                     <div class="trilha-back-end">
-                        <input class="radio" type="radio" id="back-end" name="trilha">
+                        <input class="radio" type="radio" id="back-end" name="trilha" value="Back-end">
                         <img src="imagensparafornulario/back-end.png"><br>
                         <label for="back-end">Programação Back-end</label>
                     </div>
 
                     <div class="trilha-jogos">
-                        <input class="radio" type="radio" id="jogos" name="trilha">
+                        <input class="radio" type="radio" id="jogos" name="trilha" value="Programação de jogos">
                         <img src="imagensparafornulario/jogos.png"><br>
                         <label for="jogos">Programação de Jogos</label>
                     </div>
 
                     <div class="trilha-design">
-                        <input class="radio" type="radio" id="design" name="trilha">
+                        <input class="radio" type="radio" id="design" name="trilha" value="UI/UX">
                         <img src="imagensparafornulario/ux.png"><br>
                         <label for="design">Design e Experiência</label>
                     </div>
 
                     <div class="trilha-dados">
-                        <input class="radio" type="radio" id="dados" name="trilha">
+                        <input class="radio" type="radio" id="dados" name="trilha" value="Ciências de Dados">
                         <img src="imagensparafornulario/ciencia de dados.png"><br>
                         <label for="dados">Ciência de Dados</label>
                     </div> 
@@ -150,7 +150,7 @@
                 <br>
 
                 <div class="campo-login">
-                    <p class="campo-login-senha">Crie um senha</p>
+                    <p class="campo-login-senha">Crie uma senha</p>
                     <label for="senha">Senha</label><br>
                     <input type="password" name="senha" id="senhalogin" 
                     pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
@@ -173,25 +173,11 @@
                     </label>
                 </div>
 
-
-
-
-
-
-
-
                 <div class="botao-final">
                     <button class="salvar-dados">Salvar</button>
                     <button class="cancelar" type="reset">Cancelar</button>
                     <button class="fazer-inscricao" type="submit">Fazer inscrição</button>
-                </div>      
-                
-                
-
-
-
-
-
+                </div> 
 
             </form>
         </section>
@@ -213,6 +199,12 @@
             $('#phone').mask('(00) 00000-0000');
             $('#cep').mask('00000-000');
             $('#numero-casa').mask('0000000');
+
+            $('.cancelar').click(function() {
+                if(confirm('Tem certeza que deseja cancelar? Todos os dados preenchidos serão perdidos.')) {
+                    window.location.href = 'index.html';
+                }
+            });
         });
     </script>
 
