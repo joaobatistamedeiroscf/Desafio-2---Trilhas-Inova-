@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -12,7 +13,7 @@
     <main id="principal">
         <section class="principal-formulario">
             <div class="voltar">
-                <a href="index.html"> <img src="imagensparafornulario/setinha.png"> Voltar</a>
+                <a href="inicio.html"> <img src="imagensparafornulario/setinha.png"> Voltar</a>
             </div>
             <h2 class="principal-formulario-titulo">Formulário de inscrição</h2>
             <p class="principal-formulario-texto-um">Preencha os dados abaixo para fazer sua inscrição no Programa Trilhas.</p>
@@ -24,18 +25,21 @@
 
                     <div>
                         <label for="nome">Nome completo</label><br>
-                        <input type="text" name="nome" id="nome" >
+                        <input type="text" name="nome" id="nome">
+                        <p class="mensagem-erro" id="erro-nome"></p>
                     </div>
                     
 
                     <div>
                         <label for="data">Data de nascimento</label><br>
-                        <input type="text" name="data" id="data" inputmode="numeric">
+                        <input type="date" name="data" id="data">
+                        <p class="mensagem-erro" id="erro-data"></p>
                     </div>
 
                     <div>
                         <label for="cpf">CPF</label><br>
-                        <input type="text" name="cpf" id="cpf" inputmode="numeric">
+                        <input type="text" name="cpf" id="cpf">
+                        <p class="mensagem-erro" id="erro-cpf"></p>
                     </div>
 
                     <div>
@@ -43,18 +47,21 @@
                         <select id="sexo" name="sexo">
                             <option selected disabled value="">Selecione</option>
                             <option class="option" value="Masculino">Masculino</option>
-                            <option class="option" value="Femenino">Feminino</option>
+                            <option class="option" value="Feminino">Feminino</option>
                         </select>
+                        <p class="mensagem-erro" id="erro-sexo"></p>
                     </div>
 
                     <div>
                         <label for="email">E-mail</label><br>
-                        <input type="email" name="email" id="email" inputmode="email">
+                        <input type="email" name="email" id="email">
+                        <p class="mensagem-erro" id="erro-email"></p>
                     </div>
                     
                     <div>
                         <label for="phone">Telefone</label><br>
-                        <input type="text" name="phone" id="phone" inputmode="numeric">
+                        <input type="text" name="phone" id="phone">
+                        <p class="mensagem-erro" id="erro-phone"></p>
                     </div>
 
                     <div>
@@ -73,18 +80,21 @@
 
                     <div>
                         <label for="cep">CEP</label><br>
-                        <input type="text" name="cep" id="cep" inputmode="numeric" onblur="buscarCep(this.value)">
+                        <input type="text" name="cep" id="cep" onblur="buscarCep(this.value)">
+                        <p class="mensagem-erro" id="erro-cep"></p>
                     </div>
 
                     <div class="formulario-segundo-bloco-metade">
                         <div>
                             <label for="rua">Rua</label><br>
                             <input type="text" name="rua" id="rua">
+                            <p class="mensagem-erro" id="erro-rua"></p>
                         </div>
 
                         <div>
                             <label for="numero-casa">Número</label><br>
-                            <input type="text" name="numero-casa" id="numero-casa" inputmode="numeric">
+                            <input type="text" name="numero-casa" id="numero-casa">
+                            <p class="mensagem-erro" id="erro-numero-casa"></p>
                         </div>
 
                         <div>
@@ -115,31 +125,31 @@
                 <div class="formulario-terceiro-bloco">
 
                     <div class="trilha-front-end">
-                        <input class="radio" type="radio" id="front-end" name="trilha" checked="checked">
+                        <input class="radio" type="radio" id="front-end" name="trilha" value="Front-end" checked="checked">
                         <img src="imagensparafornulario/front-end.png"><br>
                         <label for="front-end">Programação Front-end</label>
                     </div>
 
                     <div class="trilha-back-end">
-                        <input class="radio" type="radio" id="back-end" name="trilha">
+                        <input class="radio" type="radio" id="back-end" name="trilha" value="Back-end">
                         <img src="imagensparafornulario/back-end.png"><br>
                         <label for="back-end">Programação Back-end</label>
                     </div>
 
                     <div class="trilha-jogos">
-                        <input class="radio" type="radio" id="jogos" name="trilha">
+                        <input class="radio" type="radio" id="jogos" name="trilha" value="Programação de jogos">
                         <img src="imagensparafornulario/jogos.png"><br>
                         <label for="jogos">Programação de Jogos</label>
                     </div>
 
                     <div class="trilha-design">
-                        <input class="radio" type="radio" id="design" name="trilha">
+                        <input class="radio" type="radio" id="design" name="trilha" value="UI/UX">
                         <img src="imagensparafornulario/ux.png"><br>
                         <label for="design">Design e Experiência</label>
                     </div>
 
                     <div class="trilha-dados">
-                        <input class="radio" type="radio" id="dados" name="trilha">
+                        <input class="radio" type="radio" id="dados" name="trilha" value="Ciências de Dados">
                         <img src="imagensparafornulario/ciencia de dados.png"><br>
                         <label for="dados">Ciência de Dados</label>
                     </div> 
@@ -173,11 +183,11 @@
                 </div>
 
                 <div class="botao-final">
-                    <button class="salvar-dados">Salvar</button>
+                    <button class="salvar-dados" type="button">Salvar</button>
                     <button class="cancelar" type="reset">Cancelar</button>
-                    <button class="fazer-inscricao" type="submit" onclick="">Fazer inscrição</button>
-                </div>      
-                
+                    <button class="fazer-inscricao" type="submit">Fazer inscrição</button>
+                </div> 
+
             </form>
         </section>
 
@@ -194,11 +204,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
     <script>
         $(document).ready(function(){
-            $('#data').mask('00/00/0000');
             $('#cpf').mask('000.000.000-00');
             $('#phone').mask('(00) 00000-0000');
             $('#cep').mask('00000-000');
             $('#numero-casa').mask('0000000');
+
+            $('.cancelar').click(function() {
+                if(confirm('Tem certeza que deseja cancelar? Todos os dados preenchidos serão perdidos.')) {
+                    window.location.href = 'index.html';
+                }
+            });
         });
     </script>
 

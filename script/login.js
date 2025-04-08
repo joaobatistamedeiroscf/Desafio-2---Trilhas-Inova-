@@ -27,11 +27,11 @@ function entrar() {
     listaUser = JSON.parse(localStorage.getItem('listaUser'));
 
     listaUser.forEach((item) => {
-        if(cpf.value == item.CPF && senha.value == item.senha){
+        if(cpf.value == item.CPF && senha.value == item.Senha){
             userValid = {
-                nome: item.nome,
+                nome: item.Nome,
                 CPF: item.CPF,
-                senha: item.senha
+                senha: item.Senha
             }
         }
     });

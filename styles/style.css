@@ -415,7 +415,8 @@ label {
 
 }
 
-.fazer-inscricao{
+.fazer-inscricao,
+.pagina-home-sair {
     background-color: var(--cor-sexta);
     padding: 12px 24px;
     font-family: var(--fonte-primaria);
@@ -439,10 +440,65 @@ label {
     cursor: pointer;
 }
 
+.mensagem-erro {
+    color: var(--cor-sexta);
+    font-size: 0.875rem;
+    display: none;
+}
+
+/*---Página de Inicial---*/
+
+#pagina-inicial {
+    background-color: var(--cor-terciaria);
+    align-items: center;
+    text-align: center;
+}
+
+.pagina-inicial-conteudo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 9em auto;
+    width: 47.5em;
+    gap: 20px;
+}
+
+.pagina-inicial-titulo {
+    font-family: var(--fonte-secundaria);
+    font-weight: 400;
+    color: var(--cor-quaternaria);
+}
+
+.pagina-inicial-conteudo p {
+    font-family: var(--fonte-primaria);
+    font-weight: 500;
+    font-size: 1.5em;
+    color: var(--cor-quaternaria);
+    text-align: center;
+}
+
+.pagina-inicial-botao {
+    margin-top: 25px;
+    margin-bottom: 30px;
+}
+
+.pagina-inicial-botao a{
+    background-color: var(--cor-sexta);
+    font-family: var(--fonte-primaria);
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--cor-decima);
+    padding: 12px 24px;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 8px;
+    width: 100%;
+}
 
 /*---Página de Login---*/
 
-#pagina-login{
+#pagina-login, 
+#pagina-home {
     font-family: var(--fonte-primaria);
     background-color: var(--cor-terciaria);
     color: var(--cor-decima);
@@ -551,9 +607,18 @@ label {
     margin: 0.50rem auto;
 }
 
-.mensagem-erro {
+.sem-pontos {
+    list-style-type: none;
+    padding: 5px;
+}
+
+#mensagem-erro {
+    text-align: center;
     color: var(--cor-sexta);
-    font-size: 0.875rem;  
+    background-color: #ffbbbb;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 0.875rem;
     display: none;
 }
 
@@ -573,6 +638,12 @@ label {
     text-align: center;
     padding: 1rem;
     margin-top: auto;
+}
+
+/*--- Página Home --*/
+
+#pagina-home a{
+    color: var(--cor-decima);
 }
 
 
