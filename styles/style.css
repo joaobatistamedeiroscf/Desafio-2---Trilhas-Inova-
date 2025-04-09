@@ -445,6 +445,176 @@ label {
     font-size: 0.875rem;
     display: none;
 }
+/*Responsividade formulario*/
+@media (max-width: 1200px) {
+    .imagens-lateral {
+        display: none;
+    }
+    
+    #principal {
+        justify-content: center;
+        padding: 0 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .principal-formulario {
+        margin: 2rem 0;
+    }
+
+    .formulario-primeiro-bloco input,
+    .formulario-segundo-bloco input,
+    select,
+    .file-identidade,
+    .file-residencia {
+        width: 100% !important;
+        max-width: 100%;
+    }
+
+    .formulario-segundo-bloco-metade {
+        width: 100% !important;
+    }
+
+    .formulario-terceiro-bloco {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .formulario-terceiro-bloco > * {
+        width: 48%;
+        height: auto;
+        padding: 1rem;
+    }
+
+    .botao-final {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+    }
+
+    .termo-politica {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 0 1rem;
+    }
+
+    .principal-formulario {
+        margin: 1rem 0;
+    }
+
+    .formulario-terceiro-bloco > * {
+        width: 100%;
+    }
+
+    .formulario-segundo-bloco-metade div {
+        width: 100% !important;
+    }
+
+    #rua,
+    #numero-casa,
+    #cidade,
+    #estado {
+        width: 100% !important;
+    }
+
+    .requisitos-senha {
+        width: 100%;
+    }
+
+    .campo-login input {
+        width: 100% !important;
+    }
+
+    .botao-final button {
+        width: 100%;
+    }
+
+    .voltar {
+        padding-top: 1rem;
+    }
+}
+
+/* Ajustes gerais para mobile */
+@media (hover: none) and (pointer: coarse) {
+    input, select, textarea {
+        font-size: 16px !important;
+    }
+}
+
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+@media (max-width: 250px) {
+    
+    body {
+        min-width: 150px;
+        padding: 0 5px !important;
+    }
+
+    
+    #principal {
+        flex-direction: column;
+        gap: 10px;
+        margin: 0;
+    }
+
+    
+    .formulario-primeiro-bloco input,
+    .formulario-segundo-bloco input,
+    select,
+    .file-identidade,
+    .file-residencia {
+        width: 95% !important;
+        font-size: 12px !important;
+        padding: 6px !important;
+    }
+
+    
+    label, .primeiro-bloco-texto, .sugundo-bloco-texto {
+        font-size: 10px !important;
+    }
+
+    
+    .formulario-terceiro-bloco {
+        flex-direction: column;
+    }
+
+    
+    .botao-final {
+        flex-direction: column;
+        button {
+            width: 100% !important;
+            padding: 8px !important;
+            font-size: 10px !important;
+        }
+    }
+
+    
+    .file-identidade, .file-residencia {
+        height: 80px;
+        img {
+            width: 24px !important;
+            height: 24px !important;
+        }
+        p {
+            font-size: 10px !important;
+        }
+    }
+
+    
+    .principal-formulario-texto-um,
+    .trilha-apredizagem-texto {
+        font-size: 10px !important;
+    }
+}
 
 /*---Página de Inicial---*/
 
@@ -494,6 +664,59 @@ label {
     border-radius: 8px;
     width: 100%;
 }
+
+/*Responsividade pagina inicial*/
+@media (max-width: 768px) {
+    .pagina-inicial-conteudo {
+        width: 90%;
+        margin: 4em auto;
+        gap: 16px;
+    }
+
+    .pagina-inicial-titulo {
+        font-size: 2rem;
+    }
+
+    .pagina-inicial-conteudo p {
+        font-size: 1.2em;
+    }
+
+    .pagina-inicial-botao a {
+        font-size: 0.95rem;
+        padding: 10px 20px;
+    }
+
+    .pagina-inicial-conteudo img {
+        width: 80%;
+        height: auto;
+    }
+}
+@media (max-width: 480px) {
+    .pagina-inicial-conteudo {
+        width: 95%;
+        margin: 3em auto;
+        padding: 0 1em;
+    }
+
+    .pagina-inicial-titulo {
+        font-size: 1.5rem;
+    }
+
+    .pagina-inicial-conteudo p {
+        font-size: 1em;
+    }
+
+    .pagina-inicial-botao a {
+        font-size: 0.9rem;
+        padding: 10px 16px;
+    }
+
+    .pagina-inicial-conteudo img {
+        width: 100%;
+        height: auto;
+    }
+}
+
 
 /*---Página de Login---*/
 
@@ -639,6 +862,46 @@ label {
     padding: 1rem;
     margin-top: auto;
 }
+/*Responsividade tela de login*/
+
+@media (max-width: 768px) {
+    .pagina-login-container {
+        padding: 32px 24px;
+        max-width: 90%;
+    }
+
+    .pagina-login-form-campo-senha input {
+        width: 100%;
+    }
+
+    .mostrar-senha {
+        right: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pagina-login-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .pagina-login-form-campo label {
+        font-size: 0.9rem;
+    }
+
+    .pagina-login-form-submit {
+        font-size: 0.95rem;
+        padding: 0.8rem;
+    }
+
+    .pagina-login-form-campo input {
+        padding: 12px;
+        font-size: 0.95rem;
+    }
+
+    #mensagem-erro {
+        font-size: 0.8rem;
+    }
+}
 
 /*--- Página Home --*/
 
@@ -649,157 +912,5 @@ label {
 
 
 
-@media (max-width: 1200px) {
-    #principal { 
-        gap: 32px;
-        padding: 0 32px;
-    } 
-    
-    .imagens-lateral-um {
-        width: 400px;
-        height: auto;
-        padding: 50px 30px;
-    }
-}
 
-@media (max-width: 992px){
-    .principal-formulario {
-        margin: 64px 32px 0;
-    }
-    
-    .formulario-primeiro-bloco input,
-    .formulario-segundo-bloco input,
-    select,
-    .file-identidade,
-    .file-residencia {
-        width: 100% !important;
-    }
 
-    .formulario-segundo-bloco-metade {
-        width: 100% !important;
-    }
-
-    #rua, #cidade, #numero-casa, #estado {
-        width: 100% !important;
-    }
-
-    .formulario-terceiro-bloco {
-        width: 100% !important;
-    }
-
-    
-    .termo-politica {
-        width: 100% !important;
-    }
-
-    .botao-final {
-        width: 100% !important;
-    }
-
-   
-    .imagens-lateral-um {
-        width: 300px;
-        padding: 0 20px;
-    }
-    .campo-login input:focus {
-        border:2px solid var(--cor-setima) !important ;
-        outline: none;
-        
-    }
-}
-
-@media (max-width: 768px) {
-    #principal {
-        flex-direction: column;
-        gap: 0;
-        padding: 0 16px;
-    }
-
-    .principal-formulario {
-        margin: 32px 0 0;
-    }
-
-    .principal-formulario-titulo {
-        font-size: 1.25rem;
-    }
-
-    .formulario-primeiro-bloco,
-    .formulario-segundo-bloco {
-        margin-top: 32px;
-    }
-
-    .formulario-terceiro-bloco > * {
-        width: 100% !important;
-    }
-
-    .imagens-lateral {
-        flex-direction: row;
-        justify-content: center;
-        gap: 40px;
-        background-color: transparent;
-    }
-
-    .imagens-lateral-um {
-        display: none;
-    }
-
-    .imagens-lateral-dois {
-        padding: 20px 0;
-    }
-
-    .botao-final {
-        flex-direction: column;
-        margin-bottom: 32px;
-    }
-
-    .cancelar, .fazer-inscricao {
-        width: 100%;
-        text-align: center;
-    }
-    .campos-login input {
-        width: 100% !important;
-        margin:24px 0 ; 
-    }
-
-}
-
-@media (max-width: 480px) {
-    body {
-        font-size: 0.875rem;
-    }
-
-    .principal-formulario-titulo {
-        font-size: 1.1rem;
-    }
-
-    .principal-formulario-texto-um {
-        font-size: 0.9rem;
-    }
-
-    label, .texto-identidade, .texto-residencia {
-        font-size: 0.8125rem !important;
-    }
-
-    input, select {
-        font-size: 0.875rem !important;
-        padding: 10px !important;
-    }
-
-    .file-identidade, .file-residencia {
-        height: 120px !important;
-        font-size: 0.875rem !important;
-    }
-
-    .termo-politica {
-        font-size: 0.875rem !important;
-        padding: 32px 0 !important;
-    }
-
-    .trilha-front-end, 
-    .trilha-back-end, 
-    .trilha-jogos, 
-    .trilha-design, 
-    .trilha-dados {
-        font-size: 0.875rem !important;
-    }
-}
